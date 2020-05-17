@@ -1,4 +1,4 @@
-package es.upo.eps.in.covid;
+package com.upo.eps.in.covid;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
