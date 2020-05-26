@@ -19,7 +19,7 @@ public class AppController {
 
     @GetMapping("/")
     public String testApp(){
-        return "index";
+        return "redirect:/dashboard";
     }
 
     @GetMapping("/dashboard")
