@@ -1,19 +1,24 @@
-Extracción, limpieza y normalización de las tablas de la situación diaria acumulada de la enfermedad por el coronavirus SARS-CoV-2 (COVID-19) en España en un formato accesible y reutilizable. Datos actualizados diariamente según el calendario y ritmo de publicación del Ministerio de Sanidad. 
+**LEA DETENIDAMENTE ESTE README ANTES DE UTILIZAR LOS DATOS**
 
-- También tienes disponibles otros datasets accesorios para cubrir la crisis por COVID-19 en España
+**Datasets relacionados con la incidencia de la COVID-19 en España realizado por DATADISTA, medio especializado en periodismo de investigación y datos para salir del ruido.**
+
+- Extracción, limpieza y normalización de las tablas de la situación diaria acumulada de la enfermedad por el coronavirus SARS-CoV-2 (COVID-19) en España en un formato accesible y reutilizable. Datos actualizados diariamente según el calendario y ritmo de publicación del Ministerio de Sanidad y el Instituto de Salud Carlos III. 
+
+- Datasets accesorios para cubrir la crisis por COVID-19 en España
 
 **Fuente de los datos:**
 
 - Ministerio de Sanidad, Consumo y Bienestar Social: https://www.mscbs.gob.es/profesionales/saludPublica/ccayes/alertasActual/nCov-China/situacionActual.htm  y gabinete de prensa del Ministerio de Sanidad. <br>
+- Instituto de Salud Carlos III. Situación de COVID-19 en España. CSV serie histórica: https://cnecovid.isciii.es/covid19/resources/agregados.csv<br>
 - Departamento de Seguridad Nacional: https://www.dsn.gob.es/gl/current-affairs/press-room<br>
-- Instituto de Salud Carlos III. Situación de COVID-19 en España https://covid19.isciii.es/
 - BOE: Crisis Sanitaria COVID-19 https://www.boe.es/biblioteca_juridica/codigos/codigo.php?id=355&modo=2&nota=0&tab=2<br>
 - Ministerio de Transportes, Movilidad y Agenda Urbana https://www.mitma.gob.es/transporte-terrestre/punto-de-informacion-de-servicios-de-restauracion
 - Plataforma de Contratación del Estado: [Dirección General de Cartera común de servicios del Sistema Nacional de Salud y Farmacia](https://contrataciondelestado.es/wps/portal/!ut/p/b0/04_Sj9CPykssy0xPLMnMz0vMAfIjU1JTC3Iy87KtClKL0jJznPPzSooSSxLzSlL1w_Wj9KMyU5wK9CMjQ1M9TRM9y7NzTQK9jUJc0yLcK7UdbW31C3JzHQEtJPOu/) e [INGESA](https://contrataciondelestado.es/wps/portal/!ut/p/b0/DccxCoAwDADAJ2UtgoMt-APRZgsYNdimoYS-X287QDgAlYbc5NKUyv98MlsRfSfjfklJTb2TkzrDDggoZzTIMa2xhfHQFmawWpcP0GJGAA!!/)
- 
- Los datos para los días [29 de febrero](https://www.dsn.gob.es/gl/actualidad/sala-prensa/coronavirus-covid-19-29-febrero-2020), [1 de marzo](https://www.dsn.gob.es/gl/actualidad/sala-prensa/coronavirus-covid-19-01-marzo-2020), [7 de marzo](https://www.dsn.gob.es/gl/actualidad/sala-prensa/coronavirus-covid-19-07-marzo-2020) y [8 de marzo](https://www.dsn.gob.es/gl/actualidad/sala-prensa/coronavirus-covid-19-08-marzo-2020) provienen de las notas de prensa del Departamento de Seguridad Nacional y del gabinete de prensa del Ministerio de Sanidad.
+- Ministerio de Inclusión, Seguridad Social y Migraciones: http://prensa.mitramiss.gob.es/WebPrensa/noticias/seguridadsocial/detalle/3798
  
  [**PDFs originales de resumen de situación:**](https://github.com/datadista/datasets/tree/master/COVID%2019/PDFs%20originales%20de%20resumen%20de%20situacio%CC%81n) Carpeta con los PDFs originales de los informes oficiales publicados por el Ministerio de Sanidad.
+ 
+  [**Serie antigua de datasets:**](https://github.com/datadista/datasets/tree/master/COVID%2019/old_series) Carpeta con la serie de datasets mantenida hasta el 2020-04-30. A partir del 2020-05-01 la serie histórica es permanentemente corregida según los datos facilitados periódicamente por las CCAA al Ministerio de Sanidad. Los datos disponibles en la [serie antigua](https://github.com/datadista/datasets/tree/master/COVID%2019/old_series) para los días [29 de febrero](https://www.dsn.gob.es/gl/actualidad/sala-prensa/coronavirus-covid-19-29-febrero-2020), [1 de marzo](https://www.dsn.gob.es/gl/actualidad/sala-prensa/coronavirus-covid-19-01-marzo-2020), [7 de marzo](https://www.dsn.gob.es/gl/actualidad/sala-prensa/coronavirus-covid-19-07-marzo-2020) y [8 de marzo](https://www.dsn.gob.es/gl/actualidad/sala-prensa/coronavirus-covid-19-08-marzo-2020) provienen de las notas de prensa del Departamento de Seguridad Nacional y del gabinete de prensa del Ministerio de Sanidad.
 
 
 **Licencia de uso:**
@@ -56,32 +61,89 @@ grupos. Los pacientes que han precisado UCI también computan en los pacientes q
 **NOTA DE DATADISTA SOBRE LOS DATOS (20/04/2020)**: Sanidad ha actualizados los datos de altas de Galicia que estaban pendientes. Son  1536 el 18/04/20 y 1507 el 17/04/20. Estos datos juntos con el total han sido actualizados en el dataset de la serie histórica [ccaa_covid19_altas.csv](https://raw.githubusercontent.com/datadista/datasets/master/COVID%2019/ccaa_covid19_altas.csv). Sanidad también ha añadido 1.385 casos en Madrid correspondientes a "casos que iniciaron síntomas más de 14 días antes de la realización de la prueba diagnóstica y que no corresponden con nuevos contagios".
 
 
-
 **NOTA DE DATADISTA SOBRE LOS DATOS (22/04/2020)**: El Instituto de Salud Carlos III ha actualizado la serie histórica de Cataluña en el dataset [ccaa_covid19_datos_isciii.csv](https://raw.githubusercontent.com/datadista/datasets/master/COVID%2019/ccaa_covid19_datos_isciii.csv). 
+
+**NOTA DE DATADISTA SOBRE LOS DATOS DE TEST DE ANTICUERPOS (24/04/2020)**: En el informe del Ministerio de Sanidad publicado hoy indican en una nueva tabla dedicada a test de anticuerpos las CCAA que no separan entre sintomáticos y sin síntomas en el momento de diagnóstico. Son las siguientes: Asturias, Cantabria, Castilla-La Mancha, Castilla y León, Cataluña, Murcia y País Vasco. En el caso de Galicia no distinguen entre PCR, test de anticuerpos con síntomas y asintomáticos positivos a anticuerpos. Por tanto, en la suma de casos confirmados totales se pueden estar sumando casos asintomáticos de estas CCAA.
+
+**NOTA ACLARATORIA DEL MINISTERIO DE SANIDAD (24/04/2020)**: De acuerdo al criterio técnico de las CCAA, se ha decidido contabilizar los casos confirmados de COVID-19 por pruebas diagnósticas PCR notificadas, que a día de hoy son 202.990. La cifra global de 219.764 no recoge el número de personas que han enfermado desde el principio de la epidemia, sino el número de personas que han resultado positivas tanto en pruebas PCR como en test de anticuerpos. Estos últimos detectan si la persona se ha infectado, pero no determinan si la persona llegó a desarrollar la enfermedad, cuánto tiempo hace que la superó o si lo que ha hecho es desarrollar inmunidad. No reflejan por tanto los nuevos contagios. De acuerdo técnicamente con las CCAA, se ha decidido que es más correcto calcular la evolución en base a los casos por PCR que por test de anticuerpos, que son en su mayoría, casos sin síntomas o con síntomas ya pasados. Teniendo en cuenta que COVID-19 es el acrónimo de "enfermedad por coronavirus" en inglés, el número de personas enfermas, solo puede recogerse de los datos de test PCR con resultado positivo que envían las comunidades autónomas al Centro de Coordinación de Alertas y Emergencias Sanitarias (CCAES). Los datos de positivos en test de anticuerpos quedan igualmente reflejados en el informe de actualización del CCAES, pero en otra tabla. De esta forma, se contribuye a depurar la mezcla de diferentes técnicas diagnósticas de las que han informado las CCAA y que ha podido complicar la interpretación de los datos en los últimos días. El objetivo es hacer cuantas más pruebas mejor, pero para valorar la evolución de la epidemia se deben valorar datos que son comparables día a día.
+
+**ACTUALIZACIÓN DE LA NOTA DE DATADISTA SOBRE LOS DATOS (24/04/2020)**: Nos indica el Ministerio de Sanidad que en los datos de hoy también ha habido un ajuste por parte de las CCAA en la serie de positivos por PCR respecto a las cifras de ayer. Por tanto, según ellos, los casos nuevos por PCR son los 2.796. También sea va corregir en los próximos días la serie histórica por parte del Instituto de Salud Carlos III de casos confirmados para incluir solo confirmados por PCR. Los datos de casos confirmados incluyendo positivos por test de anticuerpos se empezó a contabilizar el pasado 16 de abril. Por tanto, pensamos que el ajuste que hara el ISCIII será de los datos de casos confirmados de los últimos 9 días.
+
+**NOTA DE DATADISTA SOBRE LOS DATOS (26/04/2020)**: El Ministerio de Sanidad ha dejado de ofrecer las tablas de positivos por test de anticuerpos y positivos por test de anticuerpos asintomáticos. En palabras de Fernando Simón: "No vamos a quitar las tablas serológicas, vamos a espaciar su periodicidad. Próximamente vamos a cambiar los indicadores de interés. Hemos pensado que mejor no distraer con datos de más difícil interpretación". <strike>También hemos observado que el ISCIII no ha actualizado hoy el csv que mantiene de la serie histórica, por tanto, no es posible conocer el número de casos totales detectados en España</strike>. **ACTUALIZACIÓN 15:50H** EL ISCIII acaba de añadir el csv con la serie histórica disponiendo de los datos de test PCR y test de anticcuerpos, lo que nos ha permitido poder actualizar los siguientes datasets: nacional_covid19.csv, ccaa_covid19_casos.csv, ccaa_covid19_casos_long.csv, ccaa_covid19_confirmados_test.csv, ccaa_covid19_confirmados_test_long.csv. Quedan pendientes de poder actualizar los datasets: ccaa_covid19_positivos_asintomaticos.csv y ccaa_covid19_positivos_asintomaticos_long.csv
+
+
+**NOTA DE DATADISTA SOBRE LOS DATOS (27/04/2020)**: Desde hoy, los datos publicados de Madrid en hospitalizados y UCI son el acumulado y no el dato de prevalencia.
+
+**NOTA ACLARATORIA DEL MINISTERIO DE SANIDAD (29/04/2020)**: Galicia ha notificado desde hoy los casos acumulados de UCI y ha validado los casos que han requerido hospitalización hasta la fecha (resultando en un valor menor al previamente notificado) por lo que no se han podido calcular los casos nuevos e incrementos correspondientes. Además de los 7 nuevos fallecidos de hoy, ha notificado otras 128 defunciones correspondientes a centros sociosanitarios que no corresponden a defunciones actuales y por tanto no se reflejan en la columna “Nuevos fallecidos” pero se han incluido en el total. También ha consolidado datos de altas domiciliarias lo que explica el gran incremento de los curados.
+
+**NOTA DE DATADISTA SOBRE LOS DATOS (29/04/2020)**: Desde hoy, todos los datos de hospitalizados e ingresados UCI son el acumulado.
+
+**NOTA ACLARATORIA DEL MINISTERIO DE SANIDAD (01/05/2020)**: La Comunidad de Madrid ha consolidado los datos y ajustado la serie de casos confirmados por PCR por retraso de varias semanas en la recepción de resultados. El total de casos confirmados acumulados consolidados a 29/04/2020 es de 61.777. Esto afecta al total de casos confirmados en España siendo el total de casos confirmados acumulados consolidados a 29/04/2020 de 214.041.
+
+**NOTA DE DATADISTA SOBRE LOS DATOS (01/05/2020)**: Modificado el dataset [nacional_covid19.csv](https://raw.githubusercontent.com/datadista/datasets/master/COVID%2019/nacional_covid19.csv) para corregir la serie histórica en casos, fallecidos, altas, hospitalizados e ingresos UCI, se ha modificado el nombre de la columna "casos" a "casos_total" debido a que muchos reutilizadores estaban confundiendo esa columna con la de casos confirmados por PCR.También se han incluido dos nuevas columnas: casos_pcr y casos_test. Se ha eliminado el agregado de hospitalizados e ingresos UCI de la serie histórica que estaba sumando casos de prevalencia y acumulado. El dataset anterior sin actualizar hasta el 2020-04-30 está disponible en: [nacional_covid19_old.csv](https://raw.githubusercontent.com/datadista/datasets/master/COVID%2019/old_series/nacional_covid19_old.csv).  También se ha corregido la serie histórica utilizando el csv del ISCII con fecha 2020-01-05 en los datasets: ccaa_covid19_casos.csv, ccaa_covid19_casos_long.csv, ccaa_covid19_confirmados_test.csv, ccaa_covid19_confirmados_test_long.csv,ccaa_covid19_confirmados_prc.csv, ccaa_covid19_confirmados_prc_long.csv, ccaa_covid19_hospitalizados.csv, ccaa_covid19_hospitalizados_long.csv, ccaa_covid19_UCI.csv, ccaa_covid19_UCI_long.csv, ccaa_covid19_fallecidos.csv, ccaa_covid19_fallecidos_long.csv, ccaa_covid19_altas.csv, ccaa_covid19_altas_long.csv
+
+**NOTA ACLARATORIA DEL MINISTERIO DE SANIDAD (03/05/2020)**: Andalucía ha consolidado su serie de casos y ha reclasificado 69 casos PCR+ como positivos por test de anticuerpos. La Comunidad de Madrid consolida diariamente la serie de casos confirmados por PCR, asignando a los casos nuevos notificados la fecha en la que se toma la muestra o se emite el resultado. Se realiza una actualización diaria de la serie de casos.
+
+**NOTA ACLARATORIA DEL MINISTERIO DE SANIDAD (11/05/2020)**: Cataluña ha informado el día 10.05.2020 de 2.721 casos más respecto al 09.05.2020 de los cuales 83 son casos nuevos, la serie histórica será actualizada en los próximos días.
+
+**NOTA ACLARATORIA DEL MINISTERIO DE SANIDAD (12/05/2020)**: Andalucía ha revisado sus casos confirmados por PCR y ha actualizado la información. En los totales acumulados de hoy figuran 48 caso menos respecto que ayer debido a la depuración de
+datos. Cataluña ha notificado 337 casos más respecto ayer, de los cuales 184 corresponden a casos nuevos. La serie de casos se está revisando.
+
+**NOTA ACLARATORIA DEL MINISTERIO DE SANIDAD (13/05/2020)**: De los 136 nuevos casos notificados por Cataluña, 26 casos corresponden a casos antiguos. La serie de casos se está revisando. 
+
+**NOTA ACLARATORIA DEL MINISTERIO DE SANIDAD (15/05/2020)**: Extremadura ha actualizado su histórico de positivos por PCR y ha añadido dos casos más a los datos de ayer y otros dos a los del día anterior.
+
+**NOTA ACLARATORIA DEL MINISTERIO DE SANIDAD (16/05/2020)**:  Cataluña ha notificado además de los 123 casos nuevos, 98 casos antiguos. La serie de casos se está revisando. Galicia ha realizado una revisión de sus casos y ha actualizado la información. Se continuará revisando la serie. La Comunidad de Madrid consolida diariamente la serie de casos confirmados por PCR, asignando a los casos nuevos notificados la fecha en la que se toma la muestra o se emite el resultado. Se realiza una actualización diaria de la serie de casos.
+
+
+**NOTA ACLARATORIA DEL MINISTERIO DE SANIDAD (17/05/2020)**: Cataluña ha notificado además de los 116 casos nuevos, 23 casos antiguos. La serie de casos se está revisando. País Vasco ha notificado además de los 16 casos nuevos, 100 casos antiguos. La serie de casos se está revisando. La Comunidad de Madrid consolida diariamente la serie de casos confirmados por PCR, asignando a los casos nuevos notificados la fecha en la que se toma la muestra o se emite el resultado. Se realiza una actualización diaria de la serie de casos.
+
+**NOTA ACLARATORIA DE DATADISTA (18/05/2020)**: Desde hoy, el Ministerio de Sanidad publica los datos diario por la tarde, alrededor de las 17h. Esto es debido a que las comunidades autónomas enviarán por la mañana (hasta las 12h) los datos que tengan disponibles del día anterior completo (a las 0:00h) mientras que anteriormente estos datos se facilitaban por parte de las CCAA en horario entre las 20h y 21h del día anterior a su difusión. 
+
+
+**NOTA ACLARATORIA DEL MINISTERIO DE SANIDAD (19/05/2020)**: Cataluña, Extremadura y País Vasco han validado sus casos por lo que el dato acumulado de hoy puede ser menor que el notificado ayer. Los casos nuevos no provienen de la resta de los notificados ayer respecto a hoy. Las series se están revisando. La Comunidad de Madrid consolida diariamente la serie de casos confirmados por PCR, asignando a los casos nuevos notificados la fecha en la que se toma la muestra o se emite el
+resultado. Se realiza una actualización diaria de la serie de casos.
+
+**NOTA ACLARATORIA DEL MINISTERIO DE SANIDAD (20/05/2020)**: La Comunidad de Madrid ha notificado 217 casos nuevos de los cuales 112 son nuevos diagnósticos. Esta comunidad consolida diariamente la serie de casos confirmados por PCR,
+asignando a los casos nuevos notificados la fecha en la que se toma la muestra o se emite el resultado. Se realiza una actualización diaria de la serie de casos.Las CCAA están validando y depurando las series de datos por lo que los casos totales pueden sufrir variaciones de un día a otro. El total de pacientes en hospitalizados, en UCI y fallecidos puede variar respecto a días previos debido a que algunas Andalucía, Aragón, Asturias, C. Valenciana y Extremadura están depurando sus datos.
+
+**NOTA ACLARATORIA DE DATADISTA (21/05/2020)**: Sanidad ha dejado de publicar en sus informes diarios los datos de recuperados, testAC y casos confirmados por rango de edad desde 18/05/2020. El ISCIII llevaba desde el 18/05/2020 sin actualizar la serie histórica. El 21/05/2020 ha actualizado eliminando la columna de personas recuperadas. Por este motivo, no podemos actualizar los datasets nacional_covid19_rango_edad.csv y ccaa_covid19_altas.csv y sus versiones larga. Indica Sanidad que a partir de esta semana los datos como personal sanitario contagiado y personas recuperadas se ofrecerán una vez a la semana. Hoy Sanidad no ha publicados los datos de Cataluña por ser imprecisos. Estarán disponible en breve.
+
+**NOTA ACLARATORIA DEL MINISTERIO DE SANIDAD (22/05/2020)**:Cataluña ha notificado más casos confirmados de días previos pendientes de asignación fecha de diagnóstico. La serie se está revisando. La Comunidad de Madrid ha notificado 376 casos nuevos de los cuales 53 son nuevos diagnósticos. El País Vasco ha notificado 33 casos nuevos de los cuales 13 son nuevos diagnósticos. Cataluña ha notificado más fallecidos de días previos pendientes de asignación fecha de defunción. La serie se está revisando.
+
+**NOTA ACLARATORIA DEL MINISTERIO DE SANIDAD (24/05/2020)**: Cataluña ha notificado 52 casos de nuevo diagnóstico. La serie histórica está siendo revisada. La Comunidad de Madrid ha notificado 261 casos nuevos de los cuales 26 son nuevos diagnósticos. Murcia ha notificado 4 casos nuevos de los cuales sólo 1 es nuevo diagnóstico.No hay datos actualizados en Cataluña de pacientes que han presidado hospitalización e ingresado en UCI, serie pendiente de actualización.
+
+
+**NOTA ACLARATORIA DEL MINISTERIO DE SANIDAD (25/05/2020)**: El presente informe se ha realizado, hasta el 10 de mayo de 2020, con los datos notificados diariamente de forma agregada por las comunidades autónomas. El pasado 11 de mayo de 2020 entró en vigor la nueva estrategia de diagnóstico, vigilancia y control en la fase de transición de la pandemia de COVID-19, por la que las comunidades autónomas deben notificar los casos confirmados de forma individualizada y diariamente al nivel estatal. Por lo tanto, a partir del 11 de mayo de 2020 se utiliza dicha información para la elaboración de este informe diario. Una vez combinados los datos de ambos métodos de vigilancia, en España hasta el momento se han notificado un total de 235.400 casos confirmados de COVID-19 y 26.837 fallecidos. Las discrepancias que puedan aparecer respecto a los datos de casos totales notificados previamente son resultado de la validación de los mismos por las comunidades autónomas y a la transición a la nueva estrategia de vigilancia. Esta discrepancia podría persistir aun varios días.
+
+
+**NOTA ACLARATORIA DEL ISCII (25/05/2020)**: DEBIDO A LA ENTRADA EN VIGOR DE LA NUEVA ESTRATEGIA DE VIGILANCIA Y CONTROL EN LA FASE DE TRANSICIÓN DE LA PANDEMIA DE COVID-19, HAY UN CAMBIO EN LA NOTIFICACIÓN DE LAS CCAA AL MINISTERIO DE SANIDAD QUE AFECTA A LA INFORMACIÓN DE ESTE PANEL. LAS SERIES DE CASOS DIARIOS ESTÁN EN REVISIÓN POR LAS CCAA. CUANDO SE CONSOLIDE LA INFORMACIÓN, SE PROCEDERÁ A LA ACTUALIZACIÓN DEL PANEL DE COVID-19.
+
+
   
-  
-**(\*\*)COMUNIDADES AUTONÓMAS QUE PUBLICAN DATOS DE PREVALENCIA**
+**(\*\*)COMUNIDADES AUTÓNOMAS QUE PUBLICAN DATOS DE PREVALENCIA**
 | Hospitalizados                     | Ingresos UCI         |
 |------------------------------------|----------------------|
 | Castilla La Mancha (hasta 2020-04-11)                 | Castilla La Mancha (hasta 2020-04-12)   |
 | Comunidad Valenciana (hasta 2020-04-08)               | Castilla y León  (hasta 2020-04-17)    |
-| Madrid                             | Comunidad Valenciana (hasta 2020-04-08) |
-| Castilla y León (hasta 2020-04-06) | Galicia              |
-|                                    | Madrid               |
+| Madrid (hasta 2020-04-26)                             | Comunidad Valenciana (hasta 2020-04-08) |
+| Castilla y León (hasta 2020-04-06) | Galicia (hasta 2020-04-29)              |
+|                                    | Madrid (hasta 2020-04-26)              |
 
  
 **Nombre del archivo:** [nacional_covid19.csv](https://raw.githubusercontent.com/datadista/datasets/master/COVID%2019/nacional_covid19.csv) <br>
 **Nivel administrativo:** Nacional
- 
- | Campo          | Descripción                                                       | Description                                                                       | Formato    | Ejemplo |
-|----------------|-------------------------------------------------------------------|-----------------------------------------------------------------------------------|------------|---------|
-| fecha          | Fecha de publicación                                              | Publication date                                                              | YYYY-MM-DD | 2020-03-25 |
-| casos          | Casos confirmados acumulados                                      | Accumulated confirmed cases                                                       | Número     | 7       |
-| altas          | Personas curadas acumuladas                                       | Accumulated recovered                                                             | Número     | 7       |
-| fallecimientos | Personas fallecidas acumuladas                                    | Accumulated deceased                                                              | Número     | 7       |
-| ingresos_uci   | Casos acumulados que han precisado ingreso en UCI(\*\*) | Accumulated cases that have required admission to the IC(\*\*) | Número     | 7       |
-| hospitalizados | Casos acumulados que han precisado hospitalización (incluyen UCI)(\*\*)                 | Accumulated cases that have required hospitalization (include admitted to the IC)(\*\*)                          | Número     | 7       |
 
+| Campo          | Descripción                                                                | Description                                                                             | Formato    | Ejemplo    |
+|----------------|----------------------------------------------------------------------------|-----------------------------------------------------------------------------------------|------------|------------|
+|       fecha    | Fecha de publicación                                                       | Publication date                                                                        | YYYY-MM-DD | 2020-03-25 |
+| casos_total    | Total de casos confirmados acumulados incluye PCR y Test de   anticuerpos  | Accumulated total confirmed cases (included PCR and Antibody test)                      | Número     | 7          |
+| casos_prc      | Total de casos confirmados acumulados por PCR                              | Accumulated total confirmed cases by PCR                                                | Número     | 7          |
+| casos_test     | Total de casos confirmados acumulados por test de   anticuerpos            | Accumulated total confirmed cases by Antibody test)                                     | Número     | 7          |
+| altas          | Personas curadas acumuladas                                                | Accumulated recovered                                                                   | Número     | 7          |
+| fallecimientos | Personas fallecidas acumuladas                                             | Accumulated deceased                                                                    | Número     | 7          |
+| ingresos_uci   | Casos acumulados que han precisado ingreso en UCI(**)                      | Accumulated cases that have required admission to the IC(**)                            | Número     | 7          |
+| hospitalizados | Casos acumulados que han precisado hospitalización (incluyen UCI)(**)      | Accumulated cases that have required hospitalization (include admitted   to the IC)(**) | Número     | 7          |
 
 <br><br>
 **Nombre del archivo:** [nacional_covid19_rango_edad.csv](https://raw.githubusercontent.com/datadista/datasets/master/COVID%2019/nacional_covid19_rango_edad.csv) <br>
@@ -100,8 +162,8 @@ grupos. Los pacientes que han precisado UCI también computan en los pacientes q
 
 
 <br><br>
-Descripción: Acumulado del número de casos confirmados registrados por Comunidad Autónoma.<br> 
-Description: Accumulated number of confirmed cases registered by Autonomous Community<br>
+Descripción: Acumulado del número de casos confirmados totales (PCR + Test de anticuerpos) registrados por Comunidad Autónoma.<br> 
+Description: Accumulated number of total confirmed cases (PCR + Antibody test) registered by Autonomous Community<br>
 **Nivel administrativo:** Comunidad Autónoma<br>
 **Nombre del archivo:** [ccaa_covid19_casos.csv](https://raw.githubusercontent.com/datadista/datasets/master/COVID%2019/ccaa_covid19_casos.csv) <br>
 
@@ -290,6 +352,17 @@ Description: Accumulated number of cases registered by Autonomous Community<br>
 | Fallecidos     | Personas fallecidas acumuladas                                        | Accumulated deceased                                                                  | Número     | 7          |
 | Recuperados    | Personas curadas acumuladas	                                          | Accumulated recovered                                                           | Número     | 7          |
 
+
+<br><br>
+**Nombre del archivo:** [nacional_casos_personal_sanitario.csv](https://raw.githubusercontent.com/datadista/datasets/master/COVID%2019/nacional_casos_personal_sanitario.csv) <br>
+**Nivel administrativo:** Nacional<br>
+**Descripción:** Número de casos confirmados por COVID-19 entre el personal sanitario.
+
+<br><br>
+**Nombre del archivo:** [ccaa_covid19_test_realizados.csv](https://raw.githubusercontent.com/datadista/datasets/master/COVID%2019/ccaa_covid19_test_realizados.csv) <br>
+**Nivel administrativo:** Comunidad Autónoma<br>
+**Descripción:** Número acumulado de test PCR y test de anticuerpos realizados por comunidad autonoma hasta el 2020-04-23.
+
 <br><br>
 **Nombre del archivo:** [ccaa_covid19_mascarillas.csv](https://raw.githubusercontent.com/datadista/datasets/master/COVID%2019/ccaa_covid19_mascarillas.csv) <br>
 **Nivel administrativo:** Comunidad Autónoma<br>
@@ -326,11 +399,55 @@ de interés general y todos los ligados a las actividades consideradas esenciale
 **Descripción:** Gasolineras abiertas durante el estado de alarma. Listado de estaciones de servicio con horario habitual y estaciones de servicio que pueden flexibilizar* sus horarios durante el estado de alarma.<br>
 **Fuente:** [Ministerio para la Transición Ecológica y el Reto Demográfico](https://www.miteco.gob.es/es/ministerio/medidas-covid19/)
 
+
+<br><br>
+**Nombre del archivo:** [talleres_reparacion_vehiculos_industriales.csv](https://raw.githubusercontent.com/datadista/datasets/master/COVID%2019/talleres_reparacion_vehiculos_industriales.csv)<br>
+**Nivel administrativo:** Municipio<br>
+**Descripción:** Listado de los talleres abiertos para vehículos industriales durante el estado de alarma.<br>
+**Fuente:** [Ministerio de Transportes, Movilidad y Agenda Urbana](https://www.mitma.gob.es)
+
+<br><br>
+**Nombre del archivo:** [areas_descanso_carreteras.csv](https://raw.githubusercontent.com/datadista/datasets/master/COVID%2019/areas_descanso_carreteras.csv)<br>
+**Nivel administrativo:** Municipio<br>
+**Descripción:** Listado áreas de descanso en carreteras disponibles durante el estado de alarma.<br>
+**Fuente:** [Ministerio de Transportes, Movilidad y Agenda Urbana](https://www.mitma.gob.es)
+
+
 <br><br>
 **Nombre del archivo:** [contratos_emergencia_sanidad.csv](https://raw.githubusercontent.com/datadista/datasets/master/COVID%2019/contratos_emergencia_sanidad.csv)<br>
 **Nivel administrativo:** Nacional<br>
 **Descripción:** Listado de todas las empresas adjudicatarias de contratos por parte del Ministerio de Sanidad para hacer frente a la crisis sanitaria de la COVID-19.<br>
 **Fuente:**  Plataforma de Contratación del Estado: [Dirección General de Cartera común de servicios del Sistema Nacional de Salud y Farmacia](https://contrataciondelestado.es/wps/portal/!ut/p/b0/04_Sj9CPykssy0xPLMnMz0vMAfIjU1JTC3Iy87KtClKL0jJznPPzSooSSxLzSlL1w_Wj9KMyU5wK9CMjQ1M9TRM9y7NzTQK9jUJc0yLcK7UdbW31C3JzHQEtJPOu/) e [INGESA](https://contrataciondelestado.es/wps/portal/!ut/p/b0/DccxCoAwDADAJ2UtgoMt-APRZgsYNdimoYS-X287QDgAlYbc5NKUyv98MlsRfSfjfklJTb2TkzrDDggoZzTIMa2xhfHQFmawWpcP0GJGAA!!/)
+
+
+<br><br>
+**Nombre del archivo:** [ERTE_fuerza_mayor_sectores.csv](https://raw.githubusercontent.com/datadista/datasets/master/COVID%2019/ERTE_fuerza_mayor_sectores.csv)<br>
+**Nivel administrativo:** Nacional<br>
+**Descripción:** Listado del número de personas afectadas por un ERTE por fuerza mayor por sectores. Media mensual.<br>
+**Fuente:**  Ministerio de Inclusión, Seguridad Social y Migraciones: http://prensa.mitramiss.gob.es/WebPrensa/noticias/seguridadsocial/detalle/3798
+
+
+<br><br>
+**Nombre del archivo:** [ccaa_covid19_ERTE.csv](https://raw.githubusercontent.com/datadista/datasets/master/COVID%2019/ccaa_covid19_ERTE.csv)<br>
+**Nivel administrativo:** CCAA<br>
+**Descripción:** Número de personas afectadas por un ERTE por comunidad autónoma<br>
+**Fuente:**  Ministerio de Inclusión, Seguridad Social y Migraciones: http://prensa.mitramiss.gob.es/WebPrensa/noticias/seguridadsocial/detalle/3798
+
+
+<br><br>
+**Nombre del archivo:** [provincia_covid19_ERTE.csv](https://raw.githubusercontent.com/datadista/datasets/master/COVID%2019/provincia_covid19_ERTE.csv)<br>
+**Nivel administrativo:** Provincial<br>
+**Descripción:** Número de personas afectadas por un ERTE por provincias<br>
+**Fuente:**  Ministerio de Inclusión, Seguridad Social y Migraciones: http://prensa.mitramiss.gob.es/WebPrensa/noticias/seguridadsocial/detalle/3798
+
+
+<br><br>
+**Nombre del archivo:** [provincias_estudio_prevalencia_anticuerpos_primera_ronda.csv](https://raw.githubusercontent.com/datadista/datasets/master/COVID%2019/provincias_estudio_prevalencia_anticuerpos_primera_ronda.csv)<br>
+**Nivel administrativo:** Provincial<br>
+**Descripción:** Estudio de seroprevalencia. Datos de la primera ronda. Prevalencia de anticuerpos IgG anti SARS-COv2 por provincia<br>
+**Fuente:**  La Moncloa: https://www.lamoncloa.gob.es/serviciosdeprensa/notasprensa/sanidad14/Paginas/2020/130520-seroprevalencia.aspx
+
+
 
 
 <br><br>
@@ -415,3 +532,23 @@ de interés general y todos los ligados a las actividades consideradas esenciale
 [**Situación de COVID-19 en España**](http://covid19-dashboard.mybluemix.net/)
 
 [**COVID-19 en España**](https://covid19sp.herokuapp.com/)
+
+[**El Independiente: Compras de Sanidad: 726 millones de mascarillas, 115 millones de guantes, 2.500 respiradores...**](https://www.elindependiente.com/politica/2020/04/22/compras-de-sanidad-713-millones-de-mascarillas-115-millones-de-guantes-2-500-respiradores/)
+
+[**COVID-19 Spain**](https://nachomcapella.shinyapps.io/covid-19/)
+
+[**Worldmeters Spain**](https://www.worldometers.info/coronavirus/country/spain/)
+
+[**SAN ROQUE FONTACIERA Covid-19 en España**](http://sanroquefontaciera.es/covid19/)
+
+[**nosquedamosencasa.es**](https://nosquedamosencasa.ushahidi.io/views/map)
+
+[**Análisis del COVID-19 en España por edad y sexo**](https://public.tableau.com/profile/iv.n.carballeira#!/vizhome/AnlisisCOVID-19Espaa/Dashboardedadysexo)
+
+[**COVID-19 (SARS-CoV-2): Datos Nacionales, por CCAA, mundiales y simulación epidemiológica**](https://baguadoramirez.shinyapps.io/covid/)
+
+[**COVID19-Tracker: una aplicación Shiny para analizar datos de la epidemia de SARS-CoV-2 en España DOI: 10.1016/j.gaceta.2020.04.002**](https://www.gacetasanitaria.org/es-covid19-tracker-una-aplicacion-shiny-analizar-avance-S0213911120300856?fbclid=IwAR3RweA81af9iQ_ivFE0bZSAT2m4AzQSTYr-0wTs5HATmigCmlJuTY_LGEM)
+
+[**COVID-19 Modeling: Predicciones del alcance del COVID-19**](https://covid19-modeling.github.io/)
+
+[**COVID-19 Spain**](https://covid19spain.org/)
