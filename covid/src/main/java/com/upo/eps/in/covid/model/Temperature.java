@@ -1,5 +1,7 @@
 package com.upo.eps.in.covid.model;
 
+import com.upo.eps.in.covid.entity.Data;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,11 +17,23 @@ public class Temperature {
 
     private List<Double> rainList;
 
-    public  Temperature(String nameRegion){
+    private List<Integer> casesList;
+
+    private List<Integer> deathsList;
+
+    private List<Integer> hospitalizListed;
+
+    private List<Integer> dischargedList;
+
+    public Temperature(String nameRegion) {
         this.nameRegion = nameRegion;
         this.dateList = new ArrayList<>();
         this.templList = new ArrayList<>();
         this.rainList = new ArrayList<>();
+        this.casesList = new ArrayList<>();
+        this.deathsList = new ArrayList<>();
+        this.hospitalizListed = new ArrayList<>();
+        this.dischargedList = new ArrayList<>();
     }
 
     public String getNameRegion() {
@@ -54,12 +68,46 @@ public class Temperature {
         this.rainList = rainList;
     }
 
-    public void addTemp(double temp){
-        templList.add(temp);
+    public List<Integer> getCasesList() {
+        return casesList;
     }
 
-    public void addRain(double rain){
-        templList.add(rain);
+    public void setCasesList(List<Integer> casesList) {
+        this.casesList = casesList;
+    }
+
+    public List<Integer> getDeathsList() {
+        return deathsList;
+    }
+
+    public void setDeathsList(List<Integer> deathsList) {
+        this.deathsList = deathsList;
+    }
+
+    public List<Integer> getHospitalizListed() {
+        return hospitalizListed;
+    }
+
+    public void setHospitalizListed(List<Integer> hospitalizListed) {
+        this.hospitalizListed = hospitalizListed;
+    }
+
+    public List<Integer> getDischargedList() {
+        return dischargedList;
+    }
+
+    public void setDischargedList(List<Integer> dischargedList) {
+        this.dischargedList = dischargedList;
+    }
+
+    public void add(Data data){
+        dateList.add(data.getDate());
+        templList.add(data.getTemp());
+        rainList.add(data.getRain());
+        casesList.add(data.getCases());
+        deathsList.add(data.getDeaths());
+        hospitalizListed.add(data.getHospitalized());
+        dischargedList.add(data.getDischarged());
     }
 
     @Override
