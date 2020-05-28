@@ -1,11 +1,12 @@
 package com.upo.eps.in.covid.service;
 
 import com.upo.eps.in.covid.entity.Data;
-import com.upo.eps.in.covid.model.Temperature;
+import com.upo.eps.in.covid.model.DataDto;
 import com.upo.eps.in.covid.repository.DataRepository;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,25 +19,28 @@ public class DataService {
         this.dataRepository = dataRepository;
     }
 
-    public List<Temperature> readTemperatures(){
-        List<Data> dataList = dataRepository.findAll();
-        return generateTemperatureList(dataList);
+    public List<DataDto> readTemperatures(){
+        List<com.upo.eps.in.covid.entity.Data> dataList = dataRepository.findAll();
+        return generateDataDtoList(dataList);
     }
 
-    private List<Temperature> generateTemperatureList(List<Data> dataList) {
-        List<Temperature> temperatureList = new ArrayList<>();
+    private List<DataDto> generateDataDtoList(List<com.upo.eps.in.covid.entity.Data> dataList) {
+        List<DataDto> dataDtoList = new ArrayList<>();
 
         dataList.forEach(data -> {
-            Temperature temp = new Temperature(data.getRegion());
+            DataDto dat = new DataDto(data.getRegion());
 
-            if (temperatureList.contains(temp)){
-                 int i = temperatureList.indexOf(temp);
-                 temp = temperatureList.get(i);
+            if (dataDtoList.contains(dat)){
+                 int i = dataDtoList.indexOf(dat);
+                 dat = dataDtoList.get(i);
+            } else {
+                dataDtoList.add(dat);
             }
 
-            temp.add(data);
+            dat.add(data);
         });
 
-        return temperatureList;
+        return dataDtoList;
     }
+
 }

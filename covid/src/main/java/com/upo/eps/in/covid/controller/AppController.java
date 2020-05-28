@@ -1,6 +1,6 @@
 package com.upo.eps.in.covid.controller;
 
-import com.upo.eps.in.covid.model.Temperature;
+import com.upo.eps.in.covid.model.DataDto;
 import com.upo.eps.in.covid.service.DataService;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -27,31 +27,21 @@ public class AppController {
 
     @GetMapping("/dashboard")
     public String dashboardMethod(Model model) {
-        List<Temperature> temperatureList = dataService.readTemperatures();
+        List<DataDto> dataDtoList = dataService.readTemperatures();
         int cases = 0, deaths = 0, hospitalized = 0, discharged = 0;
 
-        for (Temperature temperature : temperatureList){
-            for (int c : temperature.getCasesList()){
-                cases += c;
-            }
-
-            for (int c : temperature.getDeathsList()){
-                deaths += c;
-            }
-
-            for (int c : temperature.getHospitalizListed()){
-                hospitalized += c;
-            }
-
-            for (int c : temperature.getDischargedList()){
-                discharged += c;
-            }
+        for (DataDto dataDto : dataDtoList) {
+            cases += dataDto.getCasesList().get(dataDto.getCasesList().size()-1);
+            deaths += dataDto.getDeathsList().get(dataDto.getDeathsList().size()-1);
+            hospitalized += dataDto.getHospitalizListed().get(dataDto.getHospitalizListed().size()-1);
+            discharged += dataDto.getDischargedList().get(dataDto.getDischargedList().size()-1);
         }
 
         model.addAttribute("cases", cases);
         model.addAttribute("deaths", deaths);
         model.addAttribute("hospitalized", hospitalized);
         model.addAttribute("discharged", discharged);
+        
 
         return "dashboard";
     }

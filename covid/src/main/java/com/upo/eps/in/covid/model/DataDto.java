@@ -1,13 +1,11 @@
 package com.upo.eps.in.covid.model;
 
-import com.upo.eps.in.covid.entity.Data;
-
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class Temperature {
+public class DataDto {
 
     private String nameRegion;
 
@@ -25,7 +23,7 @@ public class Temperature {
 
     private List<Integer> dischargedList;
 
-    public Temperature(String nameRegion) {
+    public DataDto(String nameRegion) {
         this.nameRegion = nameRegion;
         this.dateList = new ArrayList<>();
         this.templList = new ArrayList<>();
@@ -100,8 +98,8 @@ public class Temperature {
         this.dischargedList = dischargedList;
     }
 
-    public void add(Data data){
-        dateList.add(data.getDate());
+    public void add(com.upo.eps.in.covid.entity.Data data){
+        dateList.add(LocalDate.parse(data.getDate()));
         templList.add(data.getTemp());
         rainList.add(data.getRain());
         casesList.add(data.getCases());
@@ -114,7 +112,7 @@ public class Temperature {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Temperature that = (Temperature) o;
+        DataDto that = (DataDto) o;
         return Objects.equals(nameRegion, that.nameRegion);
     }
 

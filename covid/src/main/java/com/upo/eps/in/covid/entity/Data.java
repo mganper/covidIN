@@ -1,34 +1,48 @@
 package com.upo.eps.in.covid.entity;
 
-import java.time.LocalDate;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import java.io.Serializable;
 
-import org.springframework.data.annotation.Id;
-
-public class Data {
+@Entity
+@Table(name = "data")
+public class Data implements Serializable {
 
     @Id
-    public String id;
+    @Column(name = "id")
+    private int id;
 
+    @Column(name = "region")
     private String region;
 
-    private LocalDate date;
+    @Column(name = "date")
+    private String date;
 
+    @Column(name = "temp")
     private double temp;
 
+    @Column(name = "rain")
     private double rain;
 
+    @Column(name = "cases")
     private int cases;
 
+    @Column(name = "deaths")
     private int deaths;
 
+    @Column(name = "hospitalized")
     private int hospitalized;
 
+    @Column(name = "discharged")
     private int discharged;
 
     public Data() {
     }
 
-    public Data(String region, LocalDate date, double temp, double rain, int cases, int deaths, int hospitalized, int discharged) {
+    public Data(int id, String region, String date, double temp, double rain, int cases, int deaths, int hospitalized, int discharged) {
+        this.id = id;
         this.region = region;
         this.date = date;
         this.temp = temp;
@@ -39,6 +53,14 @@ public class Data {
         this.discharged = discharged;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getRegion() {
         return region;
     }
@@ -47,11 +69,11 @@ public class Data {
         this.region = region;
     }
 
-    public LocalDate getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(LocalDate date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
