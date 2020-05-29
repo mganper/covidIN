@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org"/>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
     <meta name="description" content="Miminium Admin Template v.1">
     <meta name="author" content="Isna Nur Azis">
     <meta name="keyword" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Miminium</title>
+    <title>Estad&iacute;sticas de la Covid-19</title>
 
     <!-- start: Css -->
     <link rel="stylesheet" type="text/css" th:href="@{/asset/css/bootstrap.min.css}">
@@ -139,26 +139,12 @@
                     <div class="panel">
                         <div class="panel-heading bg-white border-none" style="padding:20px;">
                             <div class="col-md-6 col-sm-6 col-sm-12 text-left">
-                                <h4>Line Chart</h4>
+                                <h4>Contagios por d&iacute;a</h4>
                             </div>
                         </div>
                         <div class="panel-body" style="padding-bottom:50px;">
                             <div id="canvas-holder2">
                                 <canvas class="line-chart" id="chart1" style="margin-top:30px;height:200px;"></canvas>
-                            </div>
-                            <div class="col-md-12" style="padding-top:20px;">
-                                <div class="col-md-4 col-sm-4 col-xs-6 text-center">
-                                    <h2 style="line-height:.4;">$100.21</h2>
-                                    <small>Total Laba</small>
-                                </div>
-                                <div class="col-md-4 col-sm-4 col-xs-6 text-center">
-                                    <h2 style="line-height:.4;">2000</h2>
-                                    <small>Total Barang</small>
-                                </div>
-                                <div class="col-md-4 col-sm-4 col-xs-12 text-center">
-                                    <h2 style="line-height:.4;">$291.1</h2>
-                                    <small>Total Pengeluaran</small>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -168,7 +154,7 @@
                     <div class="panel">
                         <div class="panel-heading bg-white border-none" style="padding:20px;">
                             <div class="col-md-6 col-sm-6 col-sm-12 text-left">
-                                <h4>Line Chart</h4>
+                                <h4>Precipitaciones y humedad</h4>
                             </div>
                         </div>
                         <div class="panel-body" style="padding-bottom:50px;">
@@ -248,7 +234,7 @@
             labels: [[${dateList}]],
             datasets: [{
                 label: "Temperatura",
-                fillColor: "rgba(21,186,103,0.4)",
+                fillColor: "rgba(206,13,13,0.4)",
                 strokeColor: "rgba(220,220,220,1)",
                 pointColor: "rgba(66,69,67,0.3)",
                 pointStrokeColor: "#fff",
@@ -257,7 +243,7 @@
                 data: [[${tempList}]]
             }, {
                 label: "Precipitaciones",
-                fillColor: "rgba(21,186,103,0.4)",
+                fillColor: "rgba(11,37,212,0.4)",
                 strokeColor: "rgba(220,220,220,1)",
                 pointColor: "rgba(66,69,67,0.3)",
                 pointStrokeColor: "#fff",
@@ -328,7 +314,7 @@
                 responsive: true,
                 showTooltips: true,
                 multiTooltipTemplate: "<%= value %>",
-                maintainAspectRatio: false
+                maintainAspectRatio: true
             });
 
             var algo = $("#chart2")[0].getContext("2d");
@@ -336,7 +322,7 @@
                 responsive: true,
                 showTooltips: true,
                 multiTooltipTemplate: "<%= value %>",
-                maintainAspectRatio: false
+                maintainAspectRatio: true
             });
 
             var ctx3 = $(".bar-chart")[0].getContext("2d");
