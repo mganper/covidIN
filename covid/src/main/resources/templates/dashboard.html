@@ -144,7 +144,7 @@
                         </div>
                         <div class="panel-body" style="padding-bottom:50px;">
                             <div id="canvas-holder2">
-                                <canvas class="line-chart" style="margin-top:30px;height:200px;"></canvas>
+                                <canvas class="line-chart" id="chart1" style="margin-top:30px;height:200px;"></canvas>
                             </div>
                             <div class="col-md-12" style="padding-top:20px;">
                                 <div class="col-md-4 col-sm-4 col-xs-6 text-center">
@@ -159,6 +159,21 @@
                                     <h2 style="line-height:.4;">$291.1</h2>
                                     <small>Total Pengeluaran</small>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="panel">
+                        <div class="panel-heading bg-white border-none" style="padding:20px;">
+                            <div class="col-md-6 col-sm-6 col-sm-12 text-left">
+                                <h4>Line Chart</h4>
+                            </div>
+                        </div>
+                        <div class="panel-body" style="padding-bottom:50px;">
+                            <div id="canvas-holder45">
+                                <canvas class="line-chart" id="chart2" style="margin-top:30px;height:200px;"></canvas>
                             </div>
                         </div>
                     </div>
@@ -212,38 +227,43 @@
 
 <!-- custom -->
 <script src="asset/js/main.js"></script>
-<script type="text/javascript">
+<script type="text/javascript" th:inline="javascript">
     (function(jQuery){
         // start: Chart =============
-        var lineChartData = {
-            labels: ["January", "February", "March", "April", "May", "June", "July"],
+        var casosChart = {
+            labels: [[${dateList}]],
             datasets: [{
-                label: "My First dataset",
+                label: "Casos",
                 fillColor: "rgba(21,186,103,0.4)",
                 strokeColor: "rgba(220,220,220,1)",
                 pointColor: "rgba(66,69,67,0.3)",
                 pointStrokeColor: "#fff",
                 pointHighlightFill: "#fff",
-                pointHighlightStroke: "rgba(220,220,220,1)",
-                data: [18,9,5,7,4.5,4,5,4.5,6,5.6,7.5]
-            }, {
-                label: "My Second dataset",
-                fillColor: "rgba(21,113,186,0.5)",
-                strokeColor: "rgba(151,187,205,1)",
-                pointColor: "rgba(151,187,205,1)",
+                pointHighlightStroke: "rgb(36,114,7)",
+                data: [[${casesList}]]
+            }]
+        };
+
+        var comparacionChart = {
+            labels: [[${dateList}]],
+            datasets: [{
+                label: "Temperatura",
+                fillColor: "rgba(21,186,103,0.4)",
+                strokeColor: "rgba(220,220,220,1)",
+                pointColor: "rgba(66,69,67,0.3)",
                 pointStrokeColor: "#fff",
                 pointHighlightFill: "#fff",
-                pointHighlightStroke: "rgba(151,187,205,1)",
-                data: [4,7,5,7,4.5,4,5,4.5,6,5.6,7.5]
+                pointHighlightStroke: "rgb(101,27,108)",
+                data: [[${tempList}]]
             }, {
-                label: "My third dataset",
-                fillColor: "rgba(21,113,186,0.5)",
-                strokeColor: "rgba(151,187,205,1)",
-                pointColor: "rgba(151,187,205,1)",
+                label: "Precipitaciones",
+                fillColor: "rgba(21,186,103,0.4)",
+                strokeColor: "rgba(220,220,220,1)",
+                pointColor: "rgba(66,69,67,0.3)",
                 pointStrokeColor: "#fff",
                 pointHighlightFill: "#fff",
-                pointHighlightStroke: "rgba(151,187,205,1)",
-                data: [6.7,41,58,24,4.5,4,5,4.5,6,5.6,7.5]
+                pointHighlightStroke: "rgb(27,58,229)",
+                data: [[${rainList}]]
             }]
         };
 
@@ -278,7 +298,6 @@
                 highlight: "#15BA67",
                 label: "X"
             }
-
         ];
 
         var barChartData = {
@@ -295,7 +314,7 @@
                 {
                     label: "My Second dataset",
                     fillColor: "rgba(21,113,186,0.5)",
-                    strokeColor: "rgba(151,187,205,0.8)",
+                    strokeColor: "rgba(108,146,173,0.8)",
                     highlightFill: "rgba(21,113,186,0.2)",
                     highlightStroke: "rgba(21,113,186,0.2)",
                     data: [28, 48, 40, 19, 86, 27, 90]
@@ -304,8 +323,16 @@
         };
 
         window.onload = function(){
-            var ctx2 = $(".line-chart")[0].getContext("2d");
-            window.myLine = new Chart(ctx2).Line(lineChartData, {
+            var ctx2 = $("#chart1")[0].getContext("2d");
+            window.myLine = new Chart(ctx2).Line(casosChart, {
+                responsive: true,
+                showTooltips: true,
+                multiTooltipTemplate: "<%= value %>",
+                maintainAspectRatio: false
+            });
+
+            var algo = $("#chart2")[0].getContext("2d");
+            window.myLine = new Chart(algo).Line(comparacionChart, {
                 responsive: true,
                 showTooltips: true,
                 multiTooltipTemplate: "<%= value %>",
