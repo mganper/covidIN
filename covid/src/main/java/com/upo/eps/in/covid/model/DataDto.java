@@ -1,5 +1,7 @@
 package com.upo.eps.in.covid.model;
 
+import com.upo.eps.in.covid.entity.Data;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +21,7 @@ public class DataDto {
 
     private List<Integer> deathsList;
 
-    private List<Integer> hospitalizListed;
+    private List<Integer> hospitalizedList;
 
     private List<Integer> dischargedList;
 
@@ -30,7 +32,7 @@ public class DataDto {
         this.rainList = new ArrayList<>();
         this.casesList = new ArrayList<>();
         this.deathsList = new ArrayList<>();
-        this.hospitalizListed = new ArrayList<>();
+        this.hospitalizedList = new ArrayList<>();
         this.dischargedList = new ArrayList<>();
     }
 
@@ -82,12 +84,12 @@ public class DataDto {
         this.deathsList = deathsList;
     }
 
-    public List<Integer> getHospitalizListed() {
-        return hospitalizListed;
+    public List<Integer> getHospitalizedList() {
+        return hospitalizedList;
     }
 
-    public void setHospitalizListed(List<Integer> hospitalizListed) {
-        this.hospitalizListed = hospitalizListed;
+    public void setHospitalizedList(List<Integer> hospitalizedList) {
+        this.hospitalizedList = hospitalizedList;
     }
 
     public List<Integer> getDischargedList() {
@@ -98,13 +100,13 @@ public class DataDto {
         this.dischargedList = dischargedList;
     }
 
-    public void add(com.upo.eps.in.covid.entity.Data data){
+    public void add(Data data){
         dateList.add(LocalDate.parse(data.getDate()));
         tempList.add(data.getTemp());
         rainList.add(data.getRain());
         casesList.add(data.getCases());
         deathsList.add(data.getDeaths());
-        hospitalizListed.add(data.getHospitalized());
+        hospitalizedList.add(data.getHospitalized());
         dischargedList.add(data.getDischarged());
     }
 

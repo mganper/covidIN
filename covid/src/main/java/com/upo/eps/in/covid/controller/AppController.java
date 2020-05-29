@@ -27,13 +27,13 @@ public class AppController {
 
     @GetMapping("/dashboard")
     public String dashboardMethod(Model model) {
-        List<DataDto> dataDtoList = dataService.readTemperatures();
+        List<DataDto> dataDtoList = dataService.readData();
         int cases = 0, deaths = 0, hospitalized = 0, discharged = 0;
 
         for (DataDto dataDto : dataDtoList) {
             cases += dataDto.getCasesList().get(dataDto.getCasesList().size()-1);
             deaths += dataDto.getDeathsList().get(dataDto.getDeathsList().size()-1);
-            hospitalized += dataDto.getHospitalizListed().get(dataDto.getHospitalizListed().size()-1);
+            hospitalized += dataDto.getHospitalizedList().get(dataDto.getHospitalizedList().size()-1);
             discharged += dataDto.getDischargedList().get(dataDto.getDischargedList().size()-1);
         }
 

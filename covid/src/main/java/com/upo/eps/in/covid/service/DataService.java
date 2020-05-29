@@ -19,39 +19,57 @@ public class DataService {
         this.dataRepository = dataRepository;
     }
 
-    public List<DataDto> readTemperatures(){
+    public List<DataDto> readData() {
         List<Data> dataList = dataRepository.findAll();
         return generateDataDtoList(dataList);
     }
 
-    public DataDto getListForChart(List<DataDto> dataDtoList, String region){
+    public DataDto getListForChart(List<DataDto> dataDtoList, String region) {
         DataDto dataDto = new DataDto(region);
         List<LocalDate> dateList = new ArrayList<>();
         List<Double> templList = new ArrayList<>();
         List<Double> rainList = new ArrayList<>();
         List<Integer> casesList = new ArrayList<>();
+        List<Integer> deathsList = new ArrayList<>();
+        List<Integer> hospitalizedList = new ArrayList<>();
+        List<Integer> dischargedList = new ArrayList<>();
 
         dataDto = dataDtoList.get(dataDtoList.indexOf(dataDto));
 
-        int lastCases;
+        int lastCases, lastDeath, lastHospitalized, lastDischarged;
 
-        for(int i = 0; i < dataDto.getCasesList().size(); i += 2){
+        for (int i = 0; i < dataDto.getCasesList().size(); i += 2) {
             dateList.add(dataDto.getDateList().get(i));
             templList.add(dataDto.getTempList().get(i));
             rainList.add(dataDto.getRainList().get(i));
 
-            if(i == 0)
+            if (i == 0) {
                 casesList.add(dataDto.getCasesList().get(0));
-            else {
+                deathsList.add(dataDto.getDeathsList().get(0));
+                hospitalizedList.add(dataDto.getHospitalizedList().get(0));
+                dischargedList.add(dataDto.getDischargedList().get(0));
+            } else {
                 lastCases = dataDto.getCasesList().get(i) - dataDto.getCasesList().get(i - 2);
+                lastDeath = dataDto.getDeathsList().get(i) - dataDto.getDeathsList().get(i - 2);
+                lastHospitalized = dataDto.getHospitalizedList().get(i) - dataDto.getHospitalizedList().get(i - 2);
+                lastDischarged = dataDto.getDischargedList().get(i) - dataDto.getDischargedList().get(i - 2);
+
                 casesList.add(lastCases);
+                deathsList.add(lastDeath);
+                hospitalizedList.add(lastHospitalized);
+                dischargedList.add(lastDischarged);
             }
+
         }
 
+        dataDto = new DataDto(region);
         dataDto.setDateList(dateList);
-        dataDto.setCasesList(casesList);
         dataDto.setTempList(templList);
         dataDto.setRainList(rainList);
+        dataDto.setCasesList(casesList);
+        dataDto.setDeathsList(deathsList);
+        dataDto.setHospitalizedList(hospitalizedList);
+        dataDto.setDeathsList(dischargedList);
 
         return dataDto;
     }
@@ -62,9 +80,9 @@ public class DataService {
         dataList.forEach(data -> {
             DataDto dat = new DataDto(data.getRegion());
 
-            if (dataDtoList.contains(dat)){
-                 int i = dataDtoList.indexOf(dat);
-                 dat = dataDtoList.get(i);
+            if (dataDtoList.contains(dat)) {
+                int i = dataDtoList.indexOf(dat);
+                dat = dataDtoList.get(i);
             } else {
                 dataDtoList.add(dat);
             }
