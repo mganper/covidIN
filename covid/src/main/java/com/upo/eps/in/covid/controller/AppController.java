@@ -37,7 +37,7 @@ public class AppController {
             discharged += dataDto.getDischargedList().get(dataDto.getDischargedList().size()-1);
         }
 
-        DataDto dataDto = dataService.getListForChart(dataDtoList, "Madrid");
+        DataDto dataDto = dataService.getListForChart(dataDtoList, "Andalucía");
 
         model.addAttribute("cases", cases);
         model.addAttribute("deaths", deaths);

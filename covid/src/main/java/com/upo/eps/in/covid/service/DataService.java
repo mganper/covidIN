@@ -33,10 +33,9 @@ public class DataService {
 
         dataDto = dataDtoList.get(dataDtoList.indexOf(dataDto));
 
-        int jump = dataDto.getDateList().size() / 30;
         int lastCases;
 
-        for(int i = 0; i < dataDto.getCasesList().size(); i += jump){
+        for(int i = 0; i < dataDto.getCasesList().size(); i += 2){
             dateList.add(dataDto.getDateList().get(i));
             templList.add(dataDto.getTempList().get(i));
             rainList.add(dataDto.getRainList().get(i));
@@ -44,7 +43,7 @@ public class DataService {
             if(i == 0)
                 casesList.add(dataDto.getCasesList().get(0));
             else {
-                lastCases = dataDto.getCasesList().get(i) - casesList.get(casesList.size() - 1);
+                lastCases = dataDto.getCasesList().get(i) - dataDto.getCasesList().get(i - 2);
                 casesList.add(lastCases);
             }
         }
