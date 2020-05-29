@@ -11,7 +11,7 @@ public class DataDto {
 
     private List<LocalDate> dateList;
 
-    private List<Double> templList;
+    private List<Double> tempList;
 
     private List<Double> rainList;
 
@@ -26,7 +26,7 @@ public class DataDto {
     public DataDto(String nameRegion) {
         this.nameRegion = nameRegion;
         this.dateList = new ArrayList<>();
-        this.templList = new ArrayList<>();
+        this.tempList = new ArrayList<>();
         this.rainList = new ArrayList<>();
         this.casesList = new ArrayList<>();
         this.deathsList = new ArrayList<>();
@@ -50,12 +50,12 @@ public class DataDto {
         this.dateList = dateList;
     }
 
-    public List<Double> getTemplList() {
-        return templList;
+    public List<Double> getTempList() {
+        return tempList;
     }
 
-    public void setTemplList(List<Double> templList) {
-        this.templList = templList;
+    public void setTempList(List<Double> tempList) {
+        this.tempList = tempList;
     }
 
     public List<Double> getRainList() {
@@ -100,7 +100,7 @@ public class DataDto {
 
     public void add(com.upo.eps.in.covid.entity.Data data){
         dateList.add(LocalDate.parse(data.getDate()));
-        templList.add(data.getTemp());
+        tempList.add(data.getTemp());
         rainList.add(data.getRain());
         casesList.add(data.getCases());
         deathsList.add(data.getDeaths());

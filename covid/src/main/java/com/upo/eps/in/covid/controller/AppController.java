@@ -37,11 +37,16 @@ public class AppController {
             discharged += dataDto.getDischargedList().get(dataDto.getDischargedList().size()-1);
         }
 
+        DataDto dataDto = dataService.getListForChart(dataDtoList, "Andalucía");
+
         model.addAttribute("cases", cases);
         model.addAttribute("deaths", deaths);
         model.addAttribute("hospitalized", hospitalized);
         model.addAttribute("discharged", discharged);
-        
+        model.addAttribute("datelist", dataDto.getDateList().toArray());
+        model.addAttribute("tempList", dataDto.getTempList().toArray());
+        model.addAttribute("rainList", dataDto.getRainList().toArray());
+        model.addAttribute("casesList", dataDto.getCasesList().toArray());
 
         return "dashboard";
     }

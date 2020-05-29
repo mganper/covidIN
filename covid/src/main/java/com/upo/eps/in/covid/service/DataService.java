@@ -20,11 +20,44 @@ public class DataService {
     }
 
     public List<DataDto> readTemperatures(){
-        List<com.upo.eps.in.covid.entity.Data> dataList = dataRepository.findAll();
+        List<Data> dataList = dataRepository.findAll();
         return generateDataDtoList(dataList);
     }
 
-    private List<DataDto> generateDataDtoList(List<com.upo.eps.in.covid.entity.Data> dataList) {
+    public DataDto getListForChart(List<DataDto> dataDtoList, String region){
+        DataDto dataDto = new DataDto(region);
+        List<LocalDate> dateList = new ArrayList<>();
+        List<Double> templList = new ArrayList<>();
+        List<Double> rainList = new ArrayList<>();
+        List<Integer> casesList = new ArrayList<>();
+
+        dataDto = dataDtoList.get(dataDtoList.indexOf(dataDto));
+
+        int jump = dataDto.getDateList().size() / 30;
+        int lastCases;
+
+        for(int i = 0; i < dataDto.getCasesList().size(); i += jump){
+            dateList.add(dataDto.getDateList().get(i));
+            templList.add(dataDto.getTempList().get(i));
+            rainList.add(dataDto.getRainList().get(i));
+
+            if(i == 0)
+                casesList.add(dataDto.getCasesList().get(0));
+            else {
+                lastCases = dataDto.getCasesList().get(i) - casesList.get(casesList.size() - 1);
+                casesList.add(lastCases);
+            }
+        }
+
+        dataDto.setDateList(dateList);
+        dataDto.setCasesList(casesList);
+        dataDto.setTempList(templList);
+        dataDto.setRainList(rainList);
+
+        return dataDto;
+    }
+
+    private List<DataDto> generateDataDtoList(List<Data> dataList) {
         List<DataDto> dataDtoList = new ArrayList<>();
 
         dataList.forEach(data -> {
