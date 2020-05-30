@@ -24,7 +24,7 @@ public class AppController {
 
     @GetMapping("/")
     public String indexMethod() {
-        return "redirect:/dashboard/Andalucía";
+        return "redirect:/dashboard/1";
     }
 
     @GetMapping("/dashboard/{region}")

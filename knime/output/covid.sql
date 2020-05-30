@@ -33,7 +33,7 @@ USE `covid`;
 CREATE TABLE `data` (
   `id` int(11) NOT NULL,
   `region` varchar(36) NOT NULL,
-  `codeRegion` int(11) NOT NULL,
+  `code` int(11) NOT NULL,
   `date` varchar(16) NOT NULL,
   `rain` double NOT NULL,
   `temp` double NOT NULL,
@@ -47,7 +47,7 @@ CREATE TABLE `data` (
 -- Volcado de datos para la tabla `data`
 --
 
-INSERT INTO `data` (`id`, `region`, `codeRegion`, `date`, `rain`, `temp`, `cases`, `discharged`, `hospitalized`, `deaths`) VALUES
+INSERT INTO `data` (`id`, `region`, `code`, `date`, `rain`, `temp`, `cases`, `discharged`, `hospitalized`, `deaths`) VALUES
 (1, 'Andalucía', 1, '2020-03-09', 0, 15.29803921568628, 54, 11, 32, 0),
 (2, 'Andalucía', 1, '2020-03-10', 0, 17.074509803921572, 71, 11, 32, 0),
 (3, 'Andalucía', 1, '2020-03-11', 0, 18.655339805825246, 90, 11, 32, 0),
@@ -583,7 +583,7 @@ INSERT INTO `data` (`id`, `region`, `codeRegion`, `date`, `rain`, `temp`, `cases
 (533, 'Ceuta', 11, '2020-03-11', 0, 17.7, 0, 0, 0, 0),
 (534, 'Ceuta', 11, '2020-03-12', 0, 19.6, 0, 0, 0, 0),
 (535, 'Ceuta', 11, '2020-03-13', 0.2, 18.7, 0, 0, 0, 0);
-INSERT INTO `data` (`id`, `region`, `codeRegion`, `date`, `rain`, `temp`, `cases`, `discharged`, `hospitalized`, `deaths`) VALUES
+INSERT INTO `data` (`id`, `region`, `code`, `date`, `rain`, `temp`, `cases`, `discharged`, `hospitalized`, `deaths`) VALUES
 (536, 'Ceuta', 11, '2020-03-14', 0, 16.8, 0, 0, 0, 0),
 (537, 'Ceuta', 11, '2020-03-15', 4.2, 16, 1, 0, 0, 0),
 (538, 'Ceuta', 11, '2020-03-16', 4.8, 13.6, 1, 0, 0, 0),

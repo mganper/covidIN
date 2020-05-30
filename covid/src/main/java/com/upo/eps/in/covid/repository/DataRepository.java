@@ -9,5 +9,5 @@ import java.io.Serializable;
 @Repository("DataRepository")
 public interface DataRepository extends JpaRepository<Data, Serializable> {
 
-    Data findFirstByCodeRegion(int coderegion);
+    Data findFirstByCode(int coderegion);
 }

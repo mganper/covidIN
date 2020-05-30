@@ -17,8 +17,8 @@ public class Data implements Serializable {
     @Column(name = "region")
     private String region;
 
-    @Column(name = "codeRegion")
-    private int codeRegion;
+    @Column(name = "code")
+    private int code;
 
     @Column(name = "date")
     private String date;
@@ -44,10 +44,10 @@ public class Data implements Serializable {
     public Data() {
     }
 
-    public Data(int id, String region, int codeRegion, String date, double temp, double rain, int cases, int deaths, int hospitalized, int discharged) {
+    public Data(int id, String region, int code, String date, double temp, double rain, int cases, int deaths, int hospitalized, int discharged) {
         this.id = id;
         this.region = region;
-        this.codeRegion = codeRegion;
+        this.code = code;
         this.date = date;
         this.temp = temp;
         this.rain = rain;
@@ -73,12 +73,12 @@ public class Data implements Serializable {
         this.region = region;
     }
 
-    public int getCodeRegion() {
-        return codeRegion;
+    public int getCode() {
+        return code;
     }
 
-    public void setCodeRegion(int codeRegion) {
-        this.codeRegion = codeRegion;
+    public void setCode(int codeRegion) {
+        this.code = codeRegion;
     }
 
     public String getDate() {

@@ -25,7 +25,7 @@ public class DataService {
     }
 
     public DataDto getListForChart(List<DataDto> dataDtoList, int codeRegion) {
-        String region = dataRepository.findFirstByCodeRegion(codeRegion).getRegion();
+        String region = dataRepository.findFirstByCode(codeRegion).getRegion();
 
         DataDto dataDto = new DataDto(region, codeRegion);
         List<LocalDate> dateList = new ArrayList<>();
@@ -80,7 +80,7 @@ public class DataService {
         List<DataDto> dataDtoList = new ArrayList<>();
 
         dataList.forEach(data -> {
-            DataDto dat = new DataDto(data.getRegion(), data.getCodeRegion());
+            DataDto dat = new DataDto(data.getRegion(), data.getCode());
 
             if (dataDtoList.contains(dat)) {
                 int i = dataDtoList.indexOf(dat);
