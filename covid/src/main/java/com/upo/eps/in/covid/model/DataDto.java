@@ -11,6 +11,8 @@ public class DataDto {
 
     private String nameRegion;
 
+    private int codeRegion;
+
     private List<LocalDate> dateList;
 
     private List<Double> tempList;
@@ -25,8 +27,9 @@ public class DataDto {
 
     private List<Integer> dischargedList;
 
-    public DataDto(String nameRegion) {
+    public DataDto(String nameRegion, int codeRegion) {
         this.nameRegion = nameRegion;
+        this.codeRegion = codeRegion;
         this.dateList = new ArrayList<>();
         this.tempList = new ArrayList<>();
         this.rainList = new ArrayList<>();
@@ -42,6 +45,14 @@ public class DataDto {
 
     public void setNameRegion(String nameRegion) {
         this.nameRegion = nameRegion;
+    }
+
+    public int getCodeRegion() {
+        return codeRegion;
+    }
+
+    public void setCodeRegion(int codeRegion) {
+        this.codeRegion = codeRegion;
     }
 
     public List<LocalDate> getDateList() {
@@ -115,7 +126,7 @@ public class DataDto {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         DataDto that = (DataDto) o;
-        return Objects.equals(nameRegion, that.nameRegion);
+        return Objects.equals(nameRegion, that.nameRegion) && codeRegion == that.codeRegion;
     }
 
     @Override

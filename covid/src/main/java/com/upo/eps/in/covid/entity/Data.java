@@ -17,6 +17,9 @@ public class Data implements Serializable {
     @Column(name = "region")
     private String region;
 
+    @Column(name = "codeRegion")
+    private int codeRegion;
+
     @Column(name = "date")
     private String date;
 
@@ -41,9 +44,10 @@ public class Data implements Serializable {
     public Data() {
     }
 
-    public Data(int id, String region, String date, double temp, double rain, int cases, int deaths, int hospitalized, int discharged) {
+    public Data(int id, String region, int codeRegion, String date, double temp, double rain, int cases, int deaths, int hospitalized, int discharged) {
         this.id = id;
         this.region = region;
+        this.codeRegion = codeRegion;
         this.date = date;
         this.temp = temp;
         this.rain = rain;
@@ -67,6 +71,14 @@ public class Data implements Serializable {
 
     public void setRegion(String region) {
         this.region = region;
+    }
+
+    public int getCodeRegion() {
+        return codeRegion;
+    }
+
+    public void setCodeRegion(int codeRegion) {
+        this.codeRegion = codeRegion;
     }
 
     public String getDate() {
