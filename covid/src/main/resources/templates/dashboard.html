@@ -65,7 +65,7 @@
                         <div class="panel box-v1">
                             <div class="panel-heading bg-white border-none">
                                 <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
-                                    <h4 class="text-left">Infectados</h4>
+                                    <h4 class="text-left">Infectados en Espa&ntilde;a</h4>
                                 </div>
                                 <div class="col-md-6 col-sm-6 col-xs-6 text-right">
                                     <h4>
@@ -85,7 +85,7 @@
                         <div class="panel box-v1">
                             <div class="panel-heading bg-white border-none">
                                 <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
-                                    <h4 class="text-left">Hospitalizados</h4>
+                                    <h4 class="text-left">Hospitalizados en Espa&ntilde;a</h4>
                                 </div>
                                 <div class="col-md-6 col-sm-6 col-xs-6 text-right">
                                     <h4>
@@ -105,7 +105,7 @@
                         <div class="panel box-v1">
                             <div class="panel-heading bg-white border-none">
                                 <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
-                                    <h4 class="text-left">Altas</h4>
+                                    <h4 class="text-left">Altas en Espa&ntilde;a</h4>
                                 </div>
                                 <div class="col-md-6 col-sm-6 col-xs-6 text-right">
                                     <h4>
@@ -125,7 +125,7 @@
                         <div class="panel box-v1">
                             <div class="panel-heading bg-white border-none">
                                 <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
-                                    <h4 class="text-left">Muertes</h4>
+                                    <h4 class="text-left">Muertes en Espa&ntilde;a</h4>
                                 </div>
                                 <div class="col-md-6 col-sm-6 col-xs-6 text-right">
                                     <h4>
@@ -146,7 +146,7 @@
                         <div class="panel box-v1">
                             <div class="panel-heading bg-white border-none">
                                 <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
-                                    <h4 class="text-left">Infectados</h4>
+                                    <h4 class="text-left" th:text="'Infectados en ' + ${listForChartRegion.nameRegion}"></h4>
                                 </div>
                                 <div class="col-md-6 col-sm-6 col-xs-6 text-right">
                                     <h4>
@@ -166,7 +166,7 @@
                         <div class="panel box-v1">
                             <div class="panel-heading bg-white border-none">
                                 <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
-                                    <h4 class="text-left">Hospitalizados</h4>
+                                    <h4 class="text-left" th:text="'Hospitalizados en ' + ${listForChartRegion.nameRegion}"></h4>
                                 </div>
                                 <div class="col-md-6 col-sm-6 col-xs-6 text-right">
                                     <h4>
@@ -186,7 +186,7 @@
                         <div class="panel box-v1">
                             <div class="panel-heading bg-white border-none">
                                 <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
-                                    <h4 class="text-left">Altas</h4>
+                                    <h4 class="text-left" th:text="'Altas en ' + ${listForChartRegion.nameRegion}"></h4>
                                 </div>
                                 <div class="col-md-6 col-sm-6 col-xs-6 text-right">
                                     <h4>
@@ -206,7 +206,7 @@
                         <div class="panel box-v1">
                             <div class="panel-heading bg-white border-none">
                                 <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
-                                    <h4 class="text-left">Muertes</h4>
+                                    <h4 class="text-left" th:text="'Muertes en ' + ${listForChartRegion.nameRegion}"></h4>
                                 </div>
                                 <div class="col-md-6 col-sm-6 col-xs-6 text-right">
                                     <h4>
@@ -235,13 +235,11 @@
                         </div>
                         <div class="panel-body" style="padding-bottom:50px;">
                             <div id="canvas-holder2">
-                                <canvas class="line-chart" id="chart1" style="margin-top:30px;height:200px;"></canvas>
+                                <canvas class="line-chart" id="chartComunidad" style="margin-top:30px;height:200px;"></canvas>
                             </div>
                             <!-- Leyenda -->
                             <div class="col-md-12">
-                                <h4 style="text-decoration: underline;">Leyenda</h4>
-                                <br/>
-                                <div class="triangle-right" style="border-left: 18px solid rgba(21, 186, 103, 0.4);"></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Contagios por comunidad
+                                <div class="triangle-right" style="border-left: 18px solid rgb(100,205,154);"></div><span th:text="'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Contagios en ' + ${listForChartRegion.nameRegion}"></span>
                                 <br/>
                             </div>
 
@@ -253,17 +251,15 @@
                     <div class="panel">
                         <div class="panel-heading bg-white border-none" style="padding:20px;">
                             <div class="col-md-6 col-sm-6 col-sm-12 text-left">
-                                <h4>Climograma</h4>
+                                <h3>Climograma</h3>
                             </div>
                         </div>
                         <div class="panel-body" style="padding-bottom:50px;">
                             <div id="canvas-holder45">
-                                <canvas class="line-chart" id="chart2" style="margin-top:30px;height:200px;"></canvas>
+                                <canvas class="line-chart" id="chartClimograma" style="margin-top:30px;height:200px;"></canvas>
                             </div>
                             <!-- Leyenda -->
                             <div class="col-md-12">
-                                <h4 style="text-decoration: underline;">Leyenda</h4>
-                                <br/>
                                 <div class="triangle-right" style="border-left: 18px solid rgba(206,13,13,0.4);"></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Temperatura
                                 <br/>
                                 <br/>
@@ -272,7 +268,28 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-md-8">
+                    <div class="panel">
+                        <div class="panel-heading bg-white border-none" style="padding:20px;">
+                            <div class="col-md-6 col-sm-6 col-sm-12 text-left">
+                                <h3>Contagios por d&iacute;a</h3>
+                            </div>
+                        </div>
+                        <div class="panel-body" style="padding-bottom:50px;">
+                            <div id="canvas-holderPais">
+                                <canvas class="line-chart" id="chartPais" style="margin-top:30px;height:200px;"></canvas>
+                            </div>
+                            <!-- Leyenda -->
+                            <div class="col-md-12">
+                                <div class="triangle-right" style="border-left: 18px solid rgb(100,205,154);"></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Contagios por comunidad
+                                <br/>
+                                <br/>
+                                <div class="triangle-right" style="border-left: 18px solid rgba(226,188,40,0.6);"></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Contagios en Espa&ntilde;a
+                            </div>
 
+                        </div>
+                    </div>
+                </div>
                 <div class="col-md-6">
                     <div class="panel">
                         <div class="panel-heading bg-white border-none" style="padding:20px;">
@@ -325,19 +342,48 @@
 <script th:src="@{/asset/js/main.js}"></script>
 <script type="text/javascript" th:inline="javascript">
     (function (jQuery) {
+
         // start: Chart =============
-        var casosChart = {
+        var casosPaisChart = {
             labels: [[${listForChartRegion.dateList}]],
-            datasets: [{
-                label: "Casos",
-                fillColor: "rgba(21,186,103,0.4)",
+            datasets: [
+                {
+                    label: "Casos por pais",
+                    fillColor: "rgba(226,188,40,0.6)",
+                    strokeColor: "rgba(220,220,220,1)",
+                    pointColor: "rgba(66,69,67,0.3)",
+                    pointStrokeColor: "#fff",
+                    pointHighlightFill: "rgba(226,188,40,0.6)",
+                    pointHighlightStroke: "rgb(36,114,7)",
+                    data: [[${listForChartCountry.casesList}]]
+                },
+                {
+                label: "Casos por comunidad",
+                fillColor: "rgb(100,205,154)",
                 strokeColor: "rgba(220,220,220,1)",
                 pointColor: "rgba(66,69,67,0.3)",
                 pointStrokeColor: "#fff",
-                pointHighlightFill: "#fff",
+                pointHighlightFill: "rgb(100,205,154)",
                 pointHighlightStroke: "rgb(36,114,7)",
                 data: [[${listForChartRegion.casesList}]]
-            }]
+            }
+            ]
+        };
+
+        var casosComunidadChart = {
+            labels: [[${listForChartRegion.dateList}]],
+            datasets: [
+                {
+                    label: "Casos por comunidad",
+                    fillColor: "rgb(100,205,154)",
+                    strokeColor: "rgba(220,220,220,1)",
+                    pointColor: "rgba(66,69,67,0.3)",
+                    pointStrokeColor: "#fff",
+                    pointHighlightFill: "rgb(100,205,154)",
+                    pointHighlightStroke: "rgb(36,114,7)",
+                    data: [[${listForChartRegion.casesList}]]
+                }
+            ]
         };
 
         var comparacionChart = {
@@ -348,7 +394,7 @@
                 strokeColor: "rgba(220,220,220,1)",
                 pointColor: "rgba(66,69,67,0.3)",
                 pointStrokeColor: "#fff",
-                pointHighlightFill: "#fff",
+                pointHighlightFill: "rgba(206,13,13,0.4)",
                 pointHighlightStroke: "rgb(101,27,108)",
                 data: [[${listForChartRegion.tempList}]]
             }, {
@@ -357,7 +403,7 @@
                 strokeColor: "rgba(220,220,220,1)",
                 pointColor: "rgba(66,69,67,0.3)",
                 pointStrokeColor: "#fff",
-                pointHighlightFill: "#fff",
+                pointHighlightFill: "rgba(11,37,212,0.4)",
                 pointHighlightStroke: "rgb(27,58,229)",
                 data: [[${listForChartRegion.rainList}]]
             }]
@@ -419,16 +465,24 @@
         };
 
         window.onload = function () {
-            var ctx2 = $("#chart1")[0].getContext("2d");
-            window.myLine = new Chart(ctx2).Line(casosChart, {
+            var canvasComunidad = $("#chartComunidad")[0].getContext("2d");
+            window.myLine = new Chart(canvasComunidad).Line(casosComunidadChart, {
                 responsive: true,
                 showTooltips: true,
                 multiTooltipTemplate: "<%= value %>",
                 maintainAspectRatio: true
             });
 
-            var algo = $("#chart2")[0].getContext("2d");
-            window.myLine = new Chart(algo).Line(comparacionChart, {
+            var chartPais = $("#chartPais")[0].getContext("2d");
+            window.myLine = new Chart(chartPais).Line(casosPaisChart, {
+                responsive: true,
+                showTooltips: true,
+                multiTooltipTemplate: "<%= value %>",
+                maintainAspectRatio: true
+            });
+
+            var chartClimograma = $("#chartClimograma")[0].getContext("2d");
+            window.myLine = new Chart(chartClimograma).Line(comparacionChart, {
                 responsive: true,
                 showTooltips: true,
                 multiTooltipTemplate: "<%= value %>",
