@@ -24,7 +24,7 @@ public class AppController {
 
     @GetMapping("/")
     public String indexMethod() {
-        return "redirect:/dashboard/1";
+        return "redirect:/dashboard/0";
     }
 
     @GetMapping("/dashboard/{region}")
@@ -33,23 +33,35 @@ public class AppController {
         int cases = 0, deaths = 0, hospitalized = 0, discharged = 0;
         List<DataDto> regionlist = new ArrayList<>();
 
-        for (DataDto dataDto : dataDtoList) {
-            cases += dataDto.getCasesList().get(dataDto.getCasesList().size()-1);
-            deaths += dataDto.getDeathsList().get(dataDto.getDeathsList().size()-1);
-            hospitalized += dataDto.getHospitalizedList().get(dataDto.getHospitalizedList().size()-1);
-            discharged += dataDto.getDischargedList().get(dataDto.getDischargedList().size()-1);
+        if(codeRegion != 0){
+            DataDto dataDto = dataService.readDataByCodeRegion(codeRegion);
 
-            regionlist.add(new DataDto(dataDto.getNameRegion(), dataDto.getCodeRegion()));
+            cases += dataDto.getCasesList().get(dataDto.getCasesList().size() - 1);
+            deaths += dataDto.getDeathsList().get(dataDto.getDeathsList().size() - 1);
+            hospitalized += dataDto.getHospitalizedList().get(dataDto.getHospitalizedList().size() - 1);
+            discharged += dataDto.getDischargedList().get(dataDto.getDischargedList().size() - 1);
         }
 
-        DataDto dataDto = dataService.getListForChart(dataDtoList, codeRegion);
+        for (DataDto aux : dataDtoList) {
+
+            if(codeRegion == 0) {
+                cases += aux.getCasesList().get(aux.getCasesList().size() - 1);
+                deaths += aux.getDeathsList().get(aux.getDeathsList().size() - 1);
+                hospitalized += aux.getHospitalizedList().get(aux.getHospitalizedList().size() - 1);
+                discharged += aux.getDischargedList().get(aux.getDischargedList().size() - 1);
+            }
+
+            regionlist.add(new DataDto(aux.getNameRegion(), aux.getCodeRegion()));
+        }
+
+        DataDto listForChart = dataService.getListForChart(dataDtoList, codeRegion);
 
         model.addAttribute("cases", cases);
         model.addAttribute("deaths", deaths);
         model.addAttribute("hospitalized", hospitalized);
         model.addAttribute("discharged", discharged);
         model.addAttribute("regionList", regionlist);
-        model.addAttribute("dataDto", dataDto);
+        model.addAttribute("dataDto", listForChart);
 
         return "dashboard";
     }

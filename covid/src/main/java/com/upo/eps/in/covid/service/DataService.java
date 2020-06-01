@@ -24,6 +24,12 @@ public class DataService {
         return generateDataDtoList(dataList);
     }
 
+    public DataDto readDataByCodeRegion(int codeRegion){
+        List<Data> dataList = dataRepository.findAllByCode(codeRegion);
+        List<DataDto> dataDtoList = generateDataDtoList(dataList);
+        return dataDtoList.get(0);
+    }
+
     public DataDto getListForChart(List<DataDto> dataDtoList, int codeRegion) {
         String region = dataRepository.findFirstByCode(codeRegion).getRegion();
 
