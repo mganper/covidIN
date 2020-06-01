@@ -53,8 +53,8 @@ public class AppController {
             regionList.add(new DataDto(aux.getNameRegion(), aux.getCodeRegion()));
         }
 
-        DataDto listForChartRegion = dataService.getListForChartRegion(dataDtoList, codeRegion),
-                listForChartCountry = dataService.getListForChartCountry(dataDtoList);
+        DataDto listForChartRegion = dataService.getListForChartRegion(dataDtoList, codeRegion);
+        DataDto listForChartCountry = dataService.getListForChartCountry(dataDtoList);
 
         model.addAttribute("cases", cases);
         model.addAttribute("deaths", deaths);

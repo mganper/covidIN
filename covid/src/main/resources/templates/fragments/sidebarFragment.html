@@ -22,7 +22,7 @@
                 </a>
                 <ul class="nav nav-list tree">
                     <li th:each="reg : ${regionList}">
-                        <a th:href="@{/dashboard/{region}(region = ${reg.codeRegion})}" th:text="${reg.nameRegion}">Dashboard v.1</a>
+                        <a th:href="@{/dashboard/{region}(region = ${reg.codeRegion})}" th:text="${reg.nameRegion}"></a>
                     </li>
 
                 </ul>

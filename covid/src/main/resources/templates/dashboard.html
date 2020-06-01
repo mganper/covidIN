@@ -10,7 +10,15 @@
 
     <!-- start: Css -->
     <link rel="stylesheet" type="text/css" th:href="@{/asset/css/bootstrap.min.css}">
-
+    <style>
+        .triangle-right {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-top: 9px solid transparent;
+            border-bottom: 9px solid transparent;
+        }
+    </style>
     <!-- plugins -->
     <script src="https://kit.fontawesome.com/5e82014d58.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" th:href="@{/asset/css/plugins/simple-line-icons.css}"/>
@@ -51,6 +59,7 @@
         <div class="col-md-12" style="padding:20px;">
             <div class="col-md-12 padding-0">
                 <div class="col-md-12 padding-0">
+                    <!-- GLOBALES -->
                     <!-- Infectados -->
                     <div class="col-md-3">
                         <div class="panel box-v1">
@@ -131,25 +140,115 @@
                             </div>
                         </div>
                     </div>
+                    <!-- COMUNIDAD -->
+                    <!-- Infectados -->
+                    <div class="col-md-3">
+                        <div class="panel box-v1">
+                            <div class="panel-heading bg-white border-none">
+                                <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
+                                    <h4 class="text-left">Infectados</h4>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6 text-right">
+                                    <h4>
+                                        <span class="fas fa-disease icons icon text-right"></span>
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="panel-body text-center">
+                                <h1 th:text="${casesRegion}"></h1>
+                                <p>Pacientes</p>
+                                <hr/>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Hospitalizados -->
+                    <div class="col-md-3">
+                        <div class="panel box-v1">
+                            <div class="panel-heading bg-white border-none">
+                                <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
+                                    <h4 class="text-left">Hospitalizados</h4>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6 text-right">
+                                    <h4>
+                                        <span class="fas fa-hospital icons icon text-right"></span>
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="panel-body text-center">
+                                <h1 th:text="${hospitalizedRegion}"></h1>
+                                <p>Pacientes</p>
+                                <hr/>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Altas-->
+                    <div class="col-md-3">
+                        <div class="panel box-v1">
+                            <div class="panel-heading bg-white border-none">
+                                <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
+                                    <h4 class="text-left">Altas</h4>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6 text-right">
+                                    <h4>
+                                        <span class="fas fa-arrow-up icons icon text-right"></span>
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="panel-body text-center">
+                                <h1 th:text="${dischargedRegion}"></h1>
+                                <p>Pacientes</p>
+                                <hr/>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Muertes-->
+                    <div class="col-md-3">
+                        <div class="panel box-v1">
+                            <div class="panel-heading bg-white border-none">
+                                <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
+                                    <h4 class="text-left">Muertes</h4>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6 text-right">
+                                    <h4>
+                                        <span class="fas fa-skull-crossbones icons icon text-right"></span>
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="panel-body text-center">
+                                <h1 th:text="${deathsRegion}"></h1>
+                                <p>Pacientes</p>
+                                <hr/>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <!-- Chart section -->
+            <!-- Contagios -->
             <div class="col-md-12 card-wrap padding-0">
                 <div class="col-md-6">
                     <div class="panel">
                         <div class="panel-heading bg-white border-none" style="padding:20px;">
                             <div class="col-md-6 col-sm-6 col-sm-12 text-left">
-                                <h4>Contagios por d&iacute;a</h4>
+                                <h3>Contagios por d&iacute;a</h3>
                             </div>
                         </div>
                         <div class="panel-body" style="padding-bottom:50px;">
                             <div id="canvas-holder2">
                                 <canvas class="line-chart" id="chart1" style="margin-top:30px;height:200px;"></canvas>
                             </div>
+                            <!-- Leyenda -->
+                            <div class="col-md-12">
+                                <h4 style="text-decoration: underline;">Leyenda</h4>
+                                <br/>
+                                <div class="triangle-right" style="border-left: 18px solid rgba(21, 186, 103, 0.4);"></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Contagios por comunidad
+                                <br/>
+                            </div>
+
                         </div>
                     </div>
                 </div>
-
+                <!-- Climograma -->
                 <div class="col-md-6">
                     <div class="panel">
                         <div class="panel-heading bg-white border-none" style="padding:20px;">
@@ -160,6 +259,15 @@
                         <div class="panel-body" style="padding-bottom:50px;">
                             <div id="canvas-holder45">
                                 <canvas class="line-chart" id="chart2" style="margin-top:30px;height:200px;"></canvas>
+                            </div>
+                            <!-- Leyenda -->
+                            <div class="col-md-12">
+                                <h4 style="text-decoration: underline;">Leyenda</h4>
+                                <br/>
+                                <div class="triangle-right" style="border-left: 18px solid rgba(206,13,13,0.4);"></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Temperatura
+                                <br/>
+                                <br/>
+                                <div class="triangle-right" style="border-left: 18px solid rgba(11,37,212,0.4);"></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Precipitaciones
                             </div>
                         </div>
                     </div>
@@ -176,15 +284,17 @@
                             <div id="canvas-holder1">
                                 <canvas class="bar-chart"></canvas>
                             </div>
-                            <div class="col-md-12 padding-0" >
+                            <div class="col-md-12 padding-0">
                                 <div class="col-md-4 col-sm-4 hidden-xs" style="padding-top:20px;">
                                     <canvas class="doughnut-chart2"></canvas>
                                 </div>
                                 <div class="col-md-8 col-sm-8 col-xs-12">
                                     <h4>Progress Produksi barang</h4>
-                                    <p>Sed hendrerit. Curabitur blandit mollis lacus. Duis leo. Sed libero.fusce commodo aliquam arcu..</p>
+                                    <p>Sed hendrerit. Curabitur blandit mollis lacus. Duis leo. Sed libero.fusce commodo
+                                        aliquam arcu..</p>
                                     <div class="progress progress-mini">
-                                        <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="80"
+                                             aria-valuemin="0" aria-valuemax="100" style="width: 80%;">
                                             <span class="sr-only">60% Complete</span>
                                         </div>
                                     </div>
@@ -197,7 +307,7 @@
         </div>
     </div>
 </div>
-    <!-- end: content -->
+<!-- end: content -->
 
 <!-- start: Javascript -->
 <script th:src="@{/asset/js/jquery.min.js}"></script>
@@ -214,7 +324,7 @@
 <!-- custom -->
 <script th:src="@{/asset/js/main.js}"></script>
 <script type="text/javascript" th:inline="javascript">
-    (function(jQuery){
+    (function (jQuery) {
         // start: Chart =============
         var casosChart = {
             labels: [[${dataDto.dateList}]],
@@ -256,7 +366,7 @@
         var doughnutData2 = [
             {
                 value: 100,
-                color:"#129352",
+                color: "#129352",
                 highlight: "#15BA67",
                 label: "Alfa"
             },
@@ -308,7 +418,7 @@
             ]
         };
 
-        window.onload = function(){
+        window.onload = function () {
             var ctx2 = $("#chart1")[0].getContext("2d");
             window.myLine = new Chart(ctx2).Line(casosChart, {
                 responsive: true,
@@ -333,7 +443,7 @@
 
             var ctx4 = $(".doughnut-chart2")[0].getContext("2d");
             window.myDoughnut2 = new Chart(ctx4).Doughnut(doughnutData2, {
-                responsive : true,
+                responsive: true,
                 showTooltips: true
             });
 
