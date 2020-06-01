@@ -34,14 +34,12 @@ public class AppController {
                 cases = 0, deaths = 0, hospitalized = 0, discharged = 0;
         List<DataDto> regionList = new ArrayList<>();
 
-        if (codeRegion != 0) {
-            DataDto dataDto = dataService.readDataByCodeRegion(codeRegion);
+        DataDto dataDto = dataService.readDataByCodeRegion(codeRegion);
 
-            casesRegion = dataDto.getCasesList().get(dataDto.getCasesList().size() - 1);
-            deathsRegion = dataDto.getDeathsList().get(dataDto.getDeathsList().size() - 1);
-            hospitalizedRegion = dataDto.getHospitalizedList().get(dataDto.getHospitalizedList().size() - 1);
-            dischargedRegion = dataDto.getDischargedList().get(dataDto.getDischargedList().size() - 1);
-        }
+        casesRegion = dataDto.getCasesList().get(dataDto.getCasesList().size() - 1);
+        deathsRegion = dataDto.getDeathsList().get(dataDto.getDeathsList().size() - 1);
+        hospitalizedRegion = dataDto.getHospitalizedList().get(dataDto.getHospitalizedList().size() - 1);
+        dischargedRegion = dataDto.getDischargedList().get(dataDto.getDischargedList().size() - 1);
 
         regionList.add(new DataDto("España", 0));
 
