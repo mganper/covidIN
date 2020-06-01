@@ -15,7 +15,7 @@
     <script src="https://kit.fontawesome.com/5e82014d58.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" th:href="@{/asset/css/plugins/simple-line-icons.css}"/>
     <link rel="stylesheet" type="text/css" th:href="@{/asset/css/plugins/animate.min.css}"/>
-    <link href="asset/css/style.css" rel="stylesheet">
+    <link th:href="@{/asset/css/style.css}" rel="stylesheet">
     <!-- end: Css -->
     <link rel="shortcut icon" th:href="@{/asset/img/logomi.png}">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -154,7 +154,7 @@
                     <div class="panel">
                         <div class="panel-heading bg-white border-none" style="padding:20px;">
                             <div class="col-md-6 col-sm-6 col-sm-12 text-left">
-                                <h4>Precipitaciones y humedad</h4>
+                                <h4>Climograma</h4>
                             </div>
                         </div>
                         <div class="panel-body" style="padding-bottom:50px;">
@@ -212,12 +212,12 @@
 
 
 <!-- custom -->
-<script src="asset/js/main.js"></script>
+<script th:src="@{/asset/js/main.js}"></script>
 <script type="text/javascript" th:inline="javascript">
     (function(jQuery){
         // start: Chart =============
         var casosChart = {
-            labels: [[${dateList}]],
+            labels: [[${dataDto.dateList}]],
             datasets: [{
                 label: "Casos",
                 fillColor: "rgba(21,186,103,0.4)",
@@ -226,12 +226,12 @@
                 pointStrokeColor: "#fff",
                 pointHighlightFill: "#fff",
                 pointHighlightStroke: "rgb(36,114,7)",
-                data: [[${casesList}]]
+                data: [[${dataDto.casesList}]]
             }]
         };
 
         var comparacionChart = {
-            labels: [[${dateList}]],
+            labels: [[${dataDto.dateList}]],
             datasets: [{
                 label: "Temperatura",
                 fillColor: "rgba(206,13,13,0.4)",
@@ -240,7 +240,7 @@
                 pointStrokeColor: "#fff",
                 pointHighlightFill: "#fff",
                 pointHighlightStroke: "rgb(101,27,108)",
-                data: [[${tempList}]]
+                data: [[${dataDto.tempList}]]
             }, {
                 label: "Precipitaciones",
                 fillColor: "rgba(11,37,212,0.4)",
@@ -249,7 +249,7 @@
                 pointStrokeColor: "#fff",
                 pointHighlightFill: "#fff",
                 pointHighlightStroke: "rgb(27,58,229)",
-                data: [[${rainList}]]
+                data: [[${dataDto.rainList}]]
             }]
         };
 
@@ -338,7 +338,6 @@
             });
 
         };
-
         //  end:  Chart =============
     })(jQuery);
 </script>
