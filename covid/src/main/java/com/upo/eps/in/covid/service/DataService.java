@@ -24,13 +24,13 @@ public class DataService {
         return generateDataDtoList(dataList);
     }
 
-    public DataDto readDataByCodeRegion(int codeRegion){
+    public DataDto readDataByCodeRegion(int codeRegion) {
         List<Data> dataList = dataRepository.findAllByCode(codeRegion);
         List<DataDto> dataDtoList = generateDataDtoList(dataList);
         return dataDtoList.get(0);
     }
 
-    public DataDto getListForChart(List<DataDto> dataDtoList, int codeRegion) {
+    public DataDto getListForChartRegion(List<DataDto> dataDtoList, int codeRegion) {
         String region = dataRepository.findFirstByCode(codeRegion).getRegion();
 
         DataDto dataDto = new DataDto(region, codeRegion);
@@ -78,6 +78,30 @@ public class DataService {
         dataDto.setDeathsList(deathsList);
         dataDto.setHospitalizedList(hospitalizedList);
         dataDto.setDeathsList(dischargedList);
+
+        return dataDto;
+    }
+
+    public DataDto getListForChartCountry(List<DataDto> dataDtoList) {
+        DataDto dataDto = new DataDto("España", 0), aux;
+
+        for (int i = 0; i < dataDtoList.size(); i++) {
+            aux = getListForChartRegion(dataDtoList, dataDtoList.get(i).getCodeRegion());
+
+            if (dataDto.getCasesList().isEmpty()) {
+                dataDto.setCasesList(aux.getCasesList());
+                dataDto.setDeathsList(aux.getDeathsList());
+                dataDto.setHospitalizedList(aux.getHospitalizedList());
+                dataDto.setDischargedList(aux.getDischargedList());
+            } else {
+                for (int j = 0; j < aux.getDateList().size(); j++) {
+                    dataDto.getCasesList().set(j, aux.getCasesList().get(j) + dataDto.getCasesList().get(j));
+                    dataDto.getDeathsList().set(j, aux.getDeathsList().get(j) + dataDto.getDeathsList().get(j));
+                    dataDto.getHospitalizedList().set(j, aux.getHospitalizedList().get(j) + dataDto.getHospitalizedList().get(j));
+                    dataDto.getDischargedList().set(j, aux.getDischargedList().get(j) + dataDto.getDischargedList().get(j));
+                }
+            }
+        }
 
         return dataDto;
     }

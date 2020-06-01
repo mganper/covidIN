@@ -31,16 +31,18 @@ public class AppController {
     public String dashboardMethod(Model model, @PathVariable(name = "region") int codeRegion) {
         List<DataDto> dataDtoList = dataService.readData();
         int cases = 0, deaths = 0, hospitalized = 0, discharged = 0;
-        List<DataDto> regionlist = new ArrayList<>();
+        List<DataDto> regionList = new ArrayList<>();
 
         if(codeRegion != 0){
             DataDto dataDto = dataService.readDataByCodeRegion(codeRegion);
 
-            cases += dataDto.getCasesList().get(dataDto.getCasesList().size() - 1);
-            deaths += dataDto.getDeathsList().get(dataDto.getDeathsList().size() - 1);
-            hospitalized += dataDto.getHospitalizedList().get(dataDto.getHospitalizedList().size() - 1);
-            discharged += dataDto.getDischargedList().get(dataDto.getDischargedList().size() - 1);
+            cases = dataDto.getCasesList().get(dataDto.getCasesList().size() - 1);
+            deaths = dataDto.getDeathsList().get(dataDto.getDeathsList().size() - 1);
+            hospitalized = dataDto.getHospitalizedList().get(dataDto.getHospitalizedList().size() - 1);
+            discharged = dataDto.getDischargedList().get(dataDto.getDischargedList().size() - 1);
         }
+
+        regionList.add(new DataDto("España", 0));
 
         for (DataDto aux : dataDtoList) {
 
@@ -51,17 +53,19 @@ public class AppController {
                 discharged += aux.getDischargedList().get(aux.getDischargedList().size() - 1);
             }
 
-            regionlist.add(new DataDto(aux.getNameRegion(), aux.getCodeRegion()));
+            regionList.add(new DataDto(aux.getNameRegion(), aux.getCodeRegion()));
         }
 
-        DataDto listForChart = dataService.getListForChart(dataDtoList, codeRegion);
+        DataDto listForChartRegion = dataService.getListForChartRegion(dataDtoList, codeRegion),
+                listForChartCountry = dataService.getListForChartCountry(dataDtoList);
 
         model.addAttribute("cases", cases);
         model.addAttribute("deaths", deaths);
         model.addAttribute("hospitalized", hospitalized);
         model.addAttribute("discharged", discharged);
-        model.addAttribute("regionList", regionlist);
-        model.addAttribute("dataDto", listForChart);
+        model.addAttribute("regionList", regionList);
+        model.addAttribute("dataDto", listForChartRegion);
+        model.addAttribute("dataDtoCountry", listForChartCountry);
 
         return "dashboard";
     }
