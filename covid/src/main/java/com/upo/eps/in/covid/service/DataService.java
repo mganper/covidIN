@@ -77,7 +77,7 @@ public class DataService {
         dataDto.setCasesList(casesList);
         dataDto.setDeathsList(deathsList);
         dataDto.setHospitalizedList(hospitalizedList);
-        dataDto.setDeathsList(dischargedList);
+        dataDto.setDischargedList(dischargedList);
 
         return dataDto;
     }

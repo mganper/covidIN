@@ -24,51 +24,58 @@ public class AppController {
 
     @GetMapping("/")
     public String indexMethod() {
-        return "redirect:/dashboard/0";
+        return "redirect:/dashboard/1";
     }
 
     @GetMapping("/dashboard/{region}")
     public String dashboardMethod(Model model, @PathVariable(name = "region") int codeRegion) {
-        List<DataDto> dataDtoList = dataService.readData();
-        int casesRegion = 0, deathsRegion = 0, hospitalizedRegion = 0, dischargedRegion = 0,
-                cases = 0, deaths = 0, hospitalized = 0, discharged = 0;
-        List<DataDto> regionList = new ArrayList<>();
+        String str;
 
-        DataDto dataDto = dataService.readDataByCodeRegion(codeRegion);
+        if(codeRegion < 1 || codeRegion > 19){
+            str = "error/404";
+        } else {
+            List<DataDto> dataDtoList = dataService.readData();
+            int casesRegion = 0, deathsRegion = 0, hospitalizedRegion = 0, dischargedRegion = 0,
+                    cases = 0, deaths = 0, hospitalized = 0, discharged = 0;
+            List<DataDto> regionList = new ArrayList<>();
 
-        casesRegion = dataDto.getCasesList().get(dataDto.getCasesList().size() - 1);
-        deathsRegion = dataDto.getDeathsList().get(dataDto.getDeathsList().size() - 1);
-        hospitalizedRegion = dataDto.getHospitalizedList().get(dataDto.getHospitalizedList().size() - 1);
-        dischargedRegion = dataDto.getDischargedList().get(dataDto.getDischargedList().size() - 1);
+            DataDto dataDto = dataService.readDataByCodeRegion(codeRegion);
 
-        regionList.add(new DataDto("España", 0));
+            casesRegion = dataDto.getCasesList().get(dataDto.getCasesList().size() - 1);
+            deathsRegion = dataDto.getDeathsList().get(dataDto.getDeathsList().size() - 1);
+            hospitalizedRegion = dataDto.getHospitalizedList().get(dataDto.getHospitalizedList().size() - 1);
+            dischargedRegion = dataDto.getDischargedList().get(dataDto.getDischargedList().size() - 1);
 
-        for (DataDto aux : dataDtoList) {
+            for (DataDto aux : dataDtoList) {
 
-            cases += aux.getCasesList().get(aux.getCasesList().size() - 1);
-            deaths += aux.getDeathsList().get(aux.getDeathsList().size() - 1);
-            hospitalized += aux.getHospitalizedList().get(aux.getHospitalizedList().size() - 1);
-            discharged += aux.getDischargedList().get(aux.getDischargedList().size() - 1);
+                cases += aux.getCasesList().get(aux.getCasesList().size() - 1);
+                deaths += aux.getDeathsList().get(aux.getDeathsList().size() - 1);
+                hospitalized += aux.getHospitalizedList().get(aux.getHospitalizedList().size() - 1);
+                discharged += aux.getDischargedList().get(aux.getDischargedList().size() - 1);
 
-            regionList.add(new DataDto(aux.getNameRegion(), aux.getCodeRegion()));
+                regionList.add(new DataDto(aux.getNameRegion(), aux.getCodeRegion()));
+            }
+
+
+            DataDto listForChartRegion = dataService.getListForChartRegion(dataDtoList, codeRegion);
+            DataDto listForChartCountry = dataService.getListForChartCountry(dataDtoList);
+
+            model.addAttribute("cases", cases);
+            model.addAttribute("deaths", deaths);
+            model.addAttribute("hospitalized", hospitalized);
+            model.addAttribute("discharged", discharged);
+            model.addAttribute("casesRegion", casesRegion);
+            model.addAttribute("deathsRegion", deathsRegion);
+            model.addAttribute("hospitalizedRegion", hospitalizedRegion);
+            model.addAttribute("dischargedRegion", dischargedRegion);
+            model.addAttribute("regionList", regionList);
+            model.addAttribute("listForChartRegion", listForChartRegion);
+            model.addAttribute("listForChartCountry", listForChartCountry);
+
+            str = "dashboard";
         }
 
-        DataDto listForChartRegion = dataService.getListForChartRegion(dataDtoList, codeRegion);
-        DataDto listForChartCountry = dataService.getListForChartCountry(dataDtoList);
-
-        model.addAttribute("cases", cases);
-        model.addAttribute("deaths", deaths);
-        model.addAttribute("hospitalized", hospitalized);
-        model.addAttribute("discharged", discharged);
-        model.addAttribute("casesRegion", casesRegion);
-        model.addAttribute("deathsRegion", deathsRegion);
-        model.addAttribute("hospitalizedRegion", hospitalizedRegion);
-        model.addAttribute("dischargedRegion", dischargedRegion);
-        model.addAttribute("regionList", regionList);
-        model.addAttribute("listForChartRegion", listForChartRegion);
-        model.addAttribute("listForChartCountry", listForChartCountry);
-
-        return "dashboard";
+        return str;
     }
 
     @GetMapping("/map")

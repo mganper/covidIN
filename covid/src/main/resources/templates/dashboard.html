@@ -327,7 +327,7 @@
     (function (jQuery) {
         // start: Chart =============
         var casosChart = {
-            labels: [[${dataDto.dateList}]],
+            labels: [[${listForChartRegion.dateList}]],
             datasets: [{
                 label: "Casos",
                 fillColor: "rgba(21,186,103,0.4)",
@@ -336,12 +336,12 @@
                 pointStrokeColor: "#fff",
                 pointHighlightFill: "#fff",
                 pointHighlightStroke: "rgb(36,114,7)",
-                data: [[${dataDto.casesList}]]
+                data: [[${listForChartRegion.casesList}]]
             }]
         };
 
         var comparacionChart = {
-            labels: [[${dataDto.dateList}]],
+            labels: [[${listForChartRegion.dateList}]],
             datasets: [{
                 label: "Temperatura",
                 fillColor: "rgba(206,13,13,0.4)",
@@ -350,7 +350,7 @@
                 pointStrokeColor: "#fff",
                 pointHighlightFill: "#fff",
                 pointHighlightStroke: "rgb(101,27,108)",
-                data: [[${dataDto.tempList}]]
+                data: [[${listForChartRegion.tempList}]]
             }, {
                 label: "Precipitaciones",
                 fillColor: "rgba(11,37,212,0.4)",
@@ -359,7 +359,7 @@
                 pointStrokeColor: "#fff",
                 pointHighlightFill: "#fff",
                 pointHighlightStroke: "rgb(27,58,229)",
-                data: [[${dataDto.rainList}]]
+                data: [[${listForChartRegion.rainList}]]
             }]
         };
 
