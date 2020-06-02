@@ -41,26 +41,6 @@
     <div th:replace="fragments/sidebarFragment :: sidebar"></div>
     <!-- start: content -->
 
-    <div id="content"></div>
-</div>
-
-<!-- start: Javascript -->
-<script th:src="@{/asset/js/jquery.min.js}"></script>
-<script th:src="@{/asset/js/jquery.ui.min.js}"></script>
-<script th:src="@{/asset/js/bootstrap.min.js}"></script>
-
-
-<!-- plugins -->
-<script th:src="@{/asset/js/plugins/moment.min.js}"></script>
-<script th:src="@{/asset/js/plugins/jquery.nicescroll.js}"></script>
-<script th:src="@{/asset/js/plugins/chart.min.js}"></script>
-
-
-<!-- custom -->
-<script th:src="@{/asset/js/main.js}"></script>
-
-    <!-- start: Content -->
-<div class="container-fluid mimin-wrapper">
     <div id="content">
         <div class="panel box-shadow-none content-header" style="background-color: white;">
             <div class="panel-body">
@@ -75,7 +55,7 @@
         <div class="col-md-12 top-20 padding-0">
             <div class="col-md-12">
                 <div class="panel">
-                    <div class="panel-heading"><h3>Línea Temporal</h3></div>
+                    <div class="panel-heading"><h3 style="text-align: center;">Línea Temporal</h3></div>
                     <div class="panel-body">
                         <div class="col-md-12">
                             <ul class="timeline" >
@@ -338,6 +318,22 @@
         </div>
     </div>
 </div>
-            <!-- end: contenido linea temporal -->
+
+<!-- start: Javascript -->
+<script th:src="@{/asset/js/jquery.min.js}"></script>
+<script th:src="@{/asset/js/jquery.ui.min.js}"></script>
+<script th:src="@{/asset/js/bootstrap.min.js}"></script>
+
+
+<!-- plugins -->
+<script th:src="@{/asset/js/plugins/moment.min.js}"></script>
+<script th:src="@{/asset/js/plugins/jquery.nicescroll.js}"></script>
+<script th:src="@{/asset/js/plugins/chart.min.js}"></script>
+
+
+<!-- custom -->
+<script th:src="@{/asset/js/main.js}"></script>
+
+<!-- end: contenido linea temporal -->
 </body>
 </html>
