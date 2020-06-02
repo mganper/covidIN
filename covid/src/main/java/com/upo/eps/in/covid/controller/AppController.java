@@ -74,7 +74,7 @@ public class AppController {
             model.addAttribute("listForChartCountry", listForChartCountry);
 
             listForPieChart.forEach(e->{
-                model.addAttribute(e.getNameRegion()+ "ForPieChart", e);
+                model.addAttribute("forPieChart" + e.getCodeRegion(), e);
             });
 
 
