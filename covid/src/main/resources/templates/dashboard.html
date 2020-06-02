@@ -270,9 +270,8 @@
                         </div>
                     </div>
                 </div>
-
                 <!-- Contraste pais -->
-                <div class="col-md-8">
+                <div class="col-md-9">
                     <div class="panel">
                         <div class="panel-heading bg-white border-none" style="padding:20px;">
                             <div class="col-md-6 col-sm-6 col-sm-12 text-left">
@@ -295,6 +294,53 @@
                     </div>
                 </div>
 
+                <!-- Piechart contagios/hospitalizados -->
+                <div class="col-md-3">
+                    <div class="panel">
+                        <div class="panel-heading bg-white border-none" style="padding:20px;">
+                            <div class="col-md-6 col-sm-6 col-sm-12 text-left">
+                                <h4 th:text="'Contagios/Hospitalizados en ' + ${listForChartRegion.nameRegion}"></h4>
+                            </div>
+                        </div>
+                        <div class="panel-body" style="padding-bottom:50px;">
+                            <div style="padding-top:20px;">
+                                <canvas class="doughnut-chart-hospital"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Piechart contagios/muertos -->
+                <div class="col-md-3">
+                    <div class="panel">
+                        <div class="panel-heading bg-white border-none" style="padding:20px;">
+                            <div class="col-md-6 col-sm-6 col-sm-12 text-left">
+                                <h4 th:text="'Contagios/Muertos en ' + ${listForChartRegion.nameRegion}"></h4>
+                            </div>
+                        </div>
+                        <div class="panel-body" style="padding-bottom:50px;">
+                            <div style="padding-top:20px;">
+                                <canvas class="doughnut-chart-muertos"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mapa -->
+                <div class="col-md-6">
+                    <div class="panel">
+                        <div class="panel-heading bg-white border-none" style="padding:20px;">
+                            <div class="col-md-6 col-sm-6 col-sm-12 text-left">
+                                <h3>Mapa de calor de contagios</h3>
+                            </div>
+                        </div>
+                        <div class="panel-body" style="padding-bottom:50px;">
+                            <div style="padding-top:20px;padding-left:40px;">
+                                <img th:src="@{/asset/img/mapa_calor.png}" style="max-width: 94.5%">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Piechart contagios -->
                 <div class="col-md-6">
                     <div class="panel">
@@ -306,36 +352,6 @@
                         <div class="panel-body" style="padding-bottom:50px;">
                             <div style="padding-top:20px;">
                                 <canvas class="doughnut-chart2"></canvas>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="panel">
-                        <div class="panel-heading bg-white border-none" style="padding:20px;">
-                            <div class="col-md-6 col-sm-6 col-sm-12 text-left">
-                                <h4>Orders</h4>
-                            </div>
-                        </div>
-                        <div class="panel-body" style="padding-bottom:50px;">
-                            <div id="canvas-holder1">
-                                <canvas class="bar-chart"></canvas>
-                            </div>
-                            <div class="col-md-12 padding-0">
-                                <div class="col-md-4 col-sm-4 hidden-xs" style="padding-top:20px;">
-                                    <canvas class="doughnut-chart2"></canvas>
-                                </div>
-                                <div class="col-md-8 col-sm-8 col-xs-12">
-                                    <h4>Progress Produksi barang</h4>
-                                    <p>Sed hendrerit. Curabitur blandit mollis lacus. Duis leo. Sed libero.fusce commodo
-                                        aliquam arcu..</p>
-                                    <div class="progress progress-mini">
-                                        <div class="progress-bar" role="progressbar" aria-valuenow="80"
-                                             aria-valuemin="0" aria-valuemax="100" style="width: 80%;">
-                                            <span class="sr-only">60% Complete</span>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -371,7 +387,7 @@
                     label: "Casos por pais",
                     fillColor: "rgba(226,188,40,0.6)",
                     strokeColor: "rgba(220,220,220,1)",
-                    pointColor: "rgba(66,69,67,0.3)",
+                    pointColor: "rgba(229,196,97,0.6)",
                     pointStrokeColor: "#fff",
                     pointHighlightFill: "rgba(226,188,40,0.6)",
                     pointHighlightStroke: "rgb(36,114,7)",
@@ -381,7 +397,7 @@
                 label: "Casos por comunidad",
                 fillColor: "rgb(100,205,154)",
                 strokeColor: "rgba(220,220,220,1)",
-                pointColor: "rgba(66,69,67,0.3)",
+                pointColor: "rgb(150,227,190)",
                 pointStrokeColor: "#fff",
                 pointHighlightFill: "rgb(100,205,154)",
                 pointHighlightStroke: "rgb(36,114,7)",
@@ -390,6 +406,69 @@
         };
 
         var casosComunidadChart = {
+            labels: [[${listForChartRegion.dateList}]],
+            datasets: [
+                {
+                    label: "Casos por comunidad",
+                    fillColor: "rgba(179,55,245,0.4)",
+                    strokeColor: "rgba(220,220,220,1)",
+                    pointColor: "rgba(179,55,245,0.4)",
+                    pointStrokeColor: "#fff",
+                    pointHighlightFill: "rgba(179,55,245,0.4)",
+                    pointHighlightStroke: "rgba(179,55,245,0.4)",
+                    data: [[${listForChartRegion.casesList}]]
+                },
+                {
+                    label: "Hospitalizados por comunidad",
+                    fillColor: "rgba(47,235,255,0.4)",
+                    strokeColor: "rgba(220,220,220,1)",
+                    pointColor: "rgba(103,120,253,0.4)",
+                    pointStrokeColor: "#fff",
+                    pointHighlightFill: "rgba(34,58,255,0.4)",
+                    pointHighlightStroke: "rgba(58,79,255,0.4)",
+                    data: [[${listForChartRegion.hospitalizedList}]]
+                },
+                {
+                    label: "Casos por comunidad",
+                    fillColor: "rgba(8,229,30,0.4)",
+                    strokeColor: "rgba(220,220,220,1)",
+                    pointColor: "rgba(8,229,30,0.4)",
+                    pointStrokeColor: "#fff",
+                    pointHighlightFill: "rgb(100,205,154)",
+                    pointHighlightStroke: "rgb(36,114,7)",
+                    data: [[${listForChartRegion.dischargedList}]]
+                },
+                {
+                    label: "Casos por comunidad",
+                    fillColor: "rgba(0,0,0,0.4)",
+                    strokeColor: "rgba(220,220,220,1)",
+                    pointColor: "rgba(66,69,67,0.3)",
+                    pointStrokeColor: "#fff",
+                    pointHighlightFill: "rgba(78,78,78,0.4)",
+                    pointHighlightStroke: "rgba(78,78,78,0.4)",
+                    data: [[${listForChartRegion.deathsList}]]
+                }
+
+            ]
+        };
+
+        var hospitalizadosComunidadChart = {
+            labels: [[${listForChartRegion.dateList}]],
+            datasets: [
+                {
+                    label: "Casos por comunidad",
+                    fillColor: "rgb(100,205,154)",
+                    strokeColor: "rgba(220,220,220,1)",
+                    pointColor: "rgba(66,69,67,0.3)",
+                    pointStrokeColor: "#fff",
+                    pointHighlightFill: "rgb(100,205,154)",
+                    pointHighlightStroke: "rgb(36,114,7)",
+                    data: [[${listForChartRegion.hospitalizedList}]]
+                }
+            ]
+        };
+
+        var altasComunidadChart = {
             labels: [[${listForChartRegion.dateList}]],
             datasets: [
                 {
@@ -405,13 +484,29 @@
             ]
         };
 
+        var muertesComunidadChart = {
+            labels: [[${listForChartRegion.dateList}]],
+            datasets: [
+                {
+                    label: "Casos por comunidad",
+                    fillColor: "rgb(100,205,154)",
+                    strokeColor: "rgba(220,220,220,1)",
+                    pointColor: "rgba(66,69,67,0.3)",
+                    pointStrokeColor: "#fff",
+                    pointHighlightFill: "rgb(100,205,154)",
+                    pointHighlightStroke: "rgb(36,114,7)",
+                    data: [[${listForChartRegion.deathsList}]]
+                }
+            ]
+        };
+
         var comparacionChart = {
             labels: [[${listForChartRegion.dateList}]],
             datasets: [{
                 label: "Temperatura",
                 fillColor: "rgba(206,13,13,0.4)",
                 strokeColor: "rgba(220,220,220,1)",
-                pointColor: "rgba(66,69,67,0.3)",
+                pointColor: "rgba(206,13,13,0.4)",
                 pointStrokeColor: "#fff",
                 pointHighlightFill: "rgba(206,13,13,0.4)",
                 pointHighlightStroke: "rgb(101,27,108)",
@@ -420,13 +515,43 @@
                 label: "Precipitaciones",
                 fillColor: "rgba(11,37,212,0.4)",
                 strokeColor: "rgba(220,220,220,1)",
-                pointColor: "rgba(66,69,67,0.3)",
+                pointColor: "rgba(11,37,212,0.4)",
                 pointStrokeColor: "#fff",
                 pointHighlightFill: "rgba(11,37,212,0.4)",
                 pointHighlightStroke: "rgb(27,58,229)",
                 data: [[${listForChartRegion.rainList}]]
             }]
         };
+
+        var doughnutHospitalData = [
+            {
+                value: [[${casesRegion}]],
+                color: "rgba(32,179,222,0.82)",
+                highlight: "rgba(32,179,222,0.3)",
+                label: "Contagios"
+            },
+            {
+                value: [[${hospitalizedRegion}]],
+                color: "rgba(198,77,77,0.70)",
+                highlight: "rgba(198,77,77,0.4)",
+                label: "Hospitalizados"
+            }
+        ];
+
+        var doughnutDeathData = [
+            {
+                value: [[${casesRegion}]],
+                color: "rgba(32,179,222,0.82)",
+                highlight: "rgba(32,179,222,0.3)",
+                label: "Contagios"
+            },
+            {
+                value: [[${deathsRegion}]],
+                color: "rgba(198,77,77,0.70)",
+                highlight: "rgba(198,77,77,0.4)",
+                label: "Muertes"
+            }
+        ];
 
         var doughnutData2 = [
             {
@@ -533,28 +658,6 @@
             }
         ];
 
-        var barChartData = {
-            labels: ["January", "February", "March", "April", "May", "June", "July"],
-            datasets: [
-                {
-                    label: "My First dataset",
-                    fillColor: "rgba(21,186,103,0.4)",
-                    strokeColor: "rgba(220,220,220,0.8)",
-                    highlightFill: "rgba(21,186,103,0.2)",
-                    highlightStroke: "rgba(21,186,103,0.2)",
-                    data: [65, 59, 80, 81, 56, 55, 40]
-                },
-                {
-                    label: "My Second dataset",
-                    fillColor: "rgba(21,113,186,0.5)",
-                    strokeColor: "rgba(108,146,173,0.8)",
-                    highlightFill: "rgba(21,113,186,0.2)",
-                    highlightStroke: "rgba(21,113,186,0.2)",
-                    data: [28, 48, 40, 19, 86, 27, 90]
-                }
-            ]
-        };
-
         window.onload = function () {
             var canvasComunidad = $("#chartComunidad")[0].getContext("2d");
             window.myLine = new Chart(canvasComunidad).Line(casosComunidadChart, {
@@ -580,14 +683,20 @@
                 maintainAspectRatio: true
             });
 
-            var ctx3 = $(".bar-chart")[0].getContext("2d");
-            window.myLine = new Chart(ctx3).Bar(barChartData, {
+            var contagiosMuertos = $(".doughnut-chart-muertos")[0].getContext("2d");
+            window.myDoughnut2 = new Chart(contagiosMuertos).Pie(doughnutDeathData, {
                 responsive: true,
                 showTooltips: true
             });
 
-            var ctx4 = $(".doughnut-chart2")[0].getContext("2d");
-            window.myDoughnut2 = new Chart(ctx4).Doughnut(doughnutData2, {
+            var contagiosHospital = $(".doughnut-chart-hospital")[0].getContext("2d");
+            window.myDoughnut2 = new Chart(contagiosHospital).Pie(doughnutHospitalData, {
+                responsive: true,
+                showTooltips: true
+            });
+
+            var contagiosPorComunidad = $(".doughnut-chart2")[0].getContext("2d");
+            window.myDoughnut2 = new Chart(contagiosPorComunidad).Doughnut(doughnutData2, {
                 responsive: true,
                 showTooltips: true
             });
