@@ -113,6 +113,8 @@ public class DataService {
             DataDto aux = new DataDto(e.getNameRegion(), e.getCodeRegion());
 
             aux.getCasesList().add(e.getCasesList().get(e.getCasesList().size() - 1));
+
+            dataDtoList.add(aux);
         });
 
         return dataDtoList;
