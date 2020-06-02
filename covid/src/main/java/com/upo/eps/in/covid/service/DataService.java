@@ -30,6 +30,16 @@ public class DataService {
         return dataDtoList.get(0);
     }
 
+    public List<DataDto> getRegions(List<DataDto> dataDtoList){
+        List<DataDto> regionList = new ArrayList<>();
+
+        dataDtoList.forEach(aux->{
+            regionList.add(new DataDto(aux.getNameRegion(), aux.getCodeRegion()));
+        });
+
+        return regionList;
+    }
+
     public DataDto getListForChartRegion(List<DataDto> dataDtoList, int codeRegion) {
         String region = dataRepository.findFirstByCode(codeRegion).getRegion();
 
