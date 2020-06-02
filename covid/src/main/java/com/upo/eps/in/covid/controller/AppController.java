@@ -72,7 +72,11 @@ public class AppController {
             model.addAttribute("regionList", regionList);
             model.addAttribute("listForChartRegion", listForChartRegion);
             model.addAttribute("listForChartCountry", listForChartCountry);
-            model.addAttribute("listForPieChart", listForPieChart);
+
+            listForPieChart.forEach(e->{
+                model.addAttribute(e.getNameRegion()+ "ForPieChart", e);
+            });
+
 
             str = "dashboard";
         }
