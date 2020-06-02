@@ -89,6 +89,11 @@ public class AppController {
         return "map";
     }
 
+    @GetMapping("/lifeTime")
+    public String lifeTimeMethod(Model model) {
+        return "lineaTemporal";
+    }
+
     @GetMapping("/credits")
     public String creditsMethod(Model model) {
         return "credits";
