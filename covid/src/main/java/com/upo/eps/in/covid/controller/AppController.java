@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -80,15 +79,6 @@ public class AppController {
         }
 
         return str;
-    }
-
-    @GetMapping("/map")
-    public String mapMethod(Model model) {
-        List<DataDto> dataDtoList = dataService.readData();
-        List<DataDto> regionList = dataService.getRegions(dataDtoList);
-        model.addAttribute("regionList", regionList);
-        
-        return "map";
     }
 
     @GetMapping("/lifeTime")
