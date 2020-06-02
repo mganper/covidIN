@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="utf-8">
-    <meta name="description" content="Miminium Admin Template v.1">
-    <meta name="author" content="Isna Nur Azis">
+    <meta content="" name="description">
+    <meta content="" name="author">
     <meta name="keyword" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Estad&iacute;sticas de la Covid-19</title>
@@ -59,5 +59,273 @@
 <!-- custom -->
 <script th:src="@{/asset/js/main.js}"></script>
 
+    <!-- start: Content -->
+    <div id="content">
+        <div class="panel box-shadow-none content-header" style="background-color: white; text-align: center;">
+            <div class="panel-body">
+                <div class="col-md-12">
+                    <h3 class="animated fadeInLeft">Hechos importantes SARS-Cov-2</h3>
+                    <p class="animated fadeInDown">
+                        SARS-Cov-2 <span class="fa-angle-right fa"></span> España
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 top-20 padding-0">
+            <div class="col-md-12">
+                <div class="panel">
+                    <div class="panel-heading"><h3>Línea Temporal</h3></div>
+                    <div class="panel-body">
+                        <div class="col-md-12">
+                            <ul class="timeline" >
+                                <li>
+                                    <div class="timeline-badge"><i class="icon-plane icons list-timeline-icon"></i></div>
+                                    <div class="timeline-panel">
+                                        <div class="timeline-heading">
+                                            <h4 class="timeline-title">Primeros casos en el Mundo</h4>
+                                            <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 31 de diciembre de 2019</small></p>
+                                        </div>
+                                        <div class="timeline-body">
+                                            <p> La Comisión Municipal de Salud de Wuhan (provincia de Hubei, China)
+                                                notifica un conjunto de casos de neumonía en la ciudad.
+                                                Posteriormente se determina que están causados por un nuevo coronavirus.</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="timeline-inverted">
+                                    <div class="timeline-badge warning"></div>
+                                    <div class="timeline-panel">
+                                        <div class="timeline-heading">
+                                            <h4 class="timeline-title">Primeros casos en España</h4>
+                                            <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 31 de enero de 2020</small></p>
+                                        </div>
+                                        <div class="timeline-body">
+                                            <p>Un paciente alemán ingresado en La Gomera dio positivo en coronavirus.
+                                                Su estado era leve y se contagió, presuntamente, al contactar en Alemania con un infectado.
+                                                Nueve días después se detectó otro caso coronavirus Covid-19 en Palma.</p>
+                                            <p>Este mismo día, llegan a Madrid los españoles evacuados desde Wuhan.
+                                                Todos estaban asintomáticos y pasaron 12 días de cuarentena en el Hospital Gómez Ulla de Madrid.
+                                                Ninguno de ellos desarrolló la enfermedad.</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="timeline-badge danger"></div>
+                                    <div class="timeline-panel">
+                                        <div class="timeline-heading">
+                                            <h4 class="timeline-title"> Cancelación del Mobile World Congress</h4>
+                                            <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 12 de febrero de 2020</small></p>
+                                        </div>
+                                        <div class="timeline-body">
+                                            <p>El coronavirus obliga a cancelar el Mobile World Congress, que iba a celebrarse en Barcelona a finales de febrero.
+                                                La decisión está motivada por la retirada de algunas de las empresas más importantes que iban a participar.</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <div class="timeline-badge danger"></div>
+                                <li class="timeline-inverted">
+                                    <div class="timeline-panel">
+                                        <div class="timeline-heading">
+                                            <h4 class="timeline-title">Primer caso en la peninsula</h4>
+                                            <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 25 de febrero de 2020</small></p>
+                                        </div>
+                                        <div class="timeline-body">
+                                            <p>El coronavirus se detecta por primera vez en la Península.
+                                                Durante este día, se certifican positivos en Madrid, Barcelona y Castellón.</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="timeline-badge info"></div>
+                                    <div class="timeline-panel">
+                                        <div class="timeline-heading">
+                                            <h4 class="timeline-title">Primera muerte registrada en España</h4>
+                                            <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 4 de marzo de 2020</small></p>
+                                        </div>
+                                        <div class="timeline-body">
+                                            <p>Confirmada la primera muerte asociada al coronavirus en España.
+                                                Es un hombre de 69 años que había fallecido el 13 de febrero en Valencia y
+                                                al que se le detectó la enfermedad en una necropsia posterior.</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="timeline-panel">
+                                        <div class="timeline-heading">
+                                            <h4 class="timeline-title">Aumento de casos positivos</h4>
+                                            <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 9 de marzo de 2020</small></p>
+                                        </div>
+                                        <div class="timeline-body">
+                                            <p>El Ministerio de Sanidad reporta más de 1.200 positivos confirmados, más del doble que el día anterior. Se asume que se está produciendo "transmisión comunitaria” en Madrid (que ha duplicado los casos en 24 horas, hasta llegar a 469) y País Vasco (con 149).
+                                                Madrid anuncia que cerrará los centros educativos durante 15 días.
+                                                Los fallecidos ascienden ya a 28.</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="timeline-inverted">
+                                    <div class="timeline-badge danger"></div>
+                                    <div class="timeline-panel">
+                                        <div class="timeline-heading">
+                                            <h4 class="timeline-title">Cierre de centros</h4>
+                                            <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 12 de marzo de 2020</small></p>
+                                        </div>
+                                        <div class="timeline-body">
+                                            <p>Todas las comunidades autónomas deciden cerrar los centros educativos para frenar el coronavirus.
+                                                Se suman así a la decisión adoptada con anterioridad por la Comunidad de Madrid y La Rioja.
+                                                Además se confinan Igualada y otros tres municipios de Barcelona.</p>
+
+                                               <p> El IBEX 35 sufre la mayor caída de su historia en línea con el resto de bolsas mundiales.
+                                                El Gobierno anuncia que destinará 3.800 millones a la Sanidad e inyectará 14.000 a la economía ante el impacto del coronavirus.
+                                                La Liga de fútbol se suspende dos jornadas y la NBA cancela lo que resta de temporada.
+                                                China da por superado el pico de transmisiones de coronavirus en el país.</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="timeline-panel">
+                                        <div class="timeline-heading">
+                                            <h4 class="timeline-title">Empieza el decreto de alarma</h4>
+                                            <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 13/14 de marzo de 2020</small></p>
+                                        </div>
+                                        <div class="timeline-body">
+                                            <p>El Gobierno de España decreta el estado de alarma.
+                                                Cataluña y Baleares piden ayuda a Sánchez para confinar sus territorios y Murcia lo establece en los municipios costeros.
+                                                La Conferencia Episcopal recomienda suspender las procesiones de Semana Santa.
+                                                El número de muertos con coronavirus en el país asciende a 133 y hay cerca de 5.200 contagios.</p>
+
+                                            <p>Durante un Consejo de Ministros extraordinario se aprueba el Real Decreto Ley para combatir la pandemia del coronavirus.
+                                                De este modo, y según explica Pedro Sánchez en una rueda de prensa, el Gobierno se convierte en la única autoridad y confina toda España.
+                                                Además, se conoce que la mujer de Sánchez, Begoña Gómez, daba positivo en la prueba del coronavirus. </p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="timeline-inverted">
+                                    <div class="timeline-badge warning"></div>
+                                    <div class="timeline-panel">
+                                        <div class="timeline-heading">
+                                            <h4 class="timeline-title">Aumento de casos</h4>
+                                            <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 19 de marzo de 2020</small></p>
+                                        </div>
+                                        <div class="timeline-body">
+                                            <p>Los casos aumentan hasta los 17.147 contagiados en España, 767 muertos y 1.107 curados.
+                                                Una enfermera que trabajaba en un hospital del País Vasco se convierte en la primera sanitaria española víctima mortal por el coronavirus
+                                                y en Madrid dos hoteles se convierten en hospitales de campaña.
+                                                Por otro lado, Italia, con 3.400 decesos, supera en número de muertos a China.</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="timeline-inverted">
+                                    <div class="timeline-badge "><i class="icon-notebook icons list-timeline-icon"></i></div>
+                                    <div class="timeline-panel">
+                                        <div class="timeline-heading">
+                                            <h4 class="timeline-title">Aumento de casos</h4>
+                                            <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 24 de marzo de 2020</small></p>
+                                        </div>
+                                        <div class="timeline-body">
+                                            <p>Los fallecidos aumentan en 500 en un día, hasta 2.696, y los contagiados rozan los 40.000.
+                                                Hay otros 3.794 pacientes recuperados.
+                                                El 13% de los profesionales sanitarios españoles está infectado por coronavirus (frente al 8% en Italia y el 4% en China) y
+                                                el Gobierno admite que la falta de material dispara los contagios entre los sanitarios.
+                                                En este sentido, el Ejecutivo anuncia que está comprando mascarillas, test y respiradores en China.
+                                                Además, Inditex, Telefónica, Iberdrola, BBVA y Santander, las grandes expresas del Ibex, movilizan 150 millones para donar material
+                                                sanitario.
+                                                Además, se han puesto 20.000 denuncias a ciudadanos que no han respetado el estado de alarma.</p>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="timeline-inverted">
+                                    <div class="timeline-badge danger"><i class="icon-notebook icons list-timeline-icon"></i></div>
+                                    <div class="timeline-panel">
+                                        <div class="timeline-heading">
+                                            <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 2 de abril de 2020</small></p>
+                                        </div>
+                                        <div class="timeline-body">
+                                            <p>Con más de 10.000 fallecidos (950 más en 24 horas) España aglutina el 20% de las muertes por coronavirus de todo el mundo.
+                                                Los efectos de la crisis sanitaria dejan su huella en el mercado laboral,
+                                                con la mayor destrucción de empleo de la historia: 900.000 afiliados menos a la Seguridad en el último mes..</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="timeline-panel">
+                                        <div class="timeline-heading">
+                                            <h4 class="timeline-title">Picos de sierra</h4>
+                                            <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 8 de abril</small></p>
+                                        </div>
+                                        <div class="timeline-body">
+                                            <p>España empieza a experimentar los denominados 'picos de sierra', días de incrementos en los datos y otros de descensos.
+                                                Hay 14.555 muertos y más de 140.000 contagiados diagnosticados.
+                                                Por la cercanía de la Semana Santa, la Guardia Civil activa la 'Operación Jaula' para controlar los desplazamientos. </p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="timeline-inverted">
+                                    <div class="timeline-badge warning"><i class="icon-notebook icons list-timeline-icon"></i></div>
+                                    <div class="timeline-panel">
+                                        <div class="timeline-heading">
+                                            <h4 class="timeline-title">Quinta semana de confinamiento</h4>
+                                            <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 13 de abril de 2020</small></p>
+                                        </div>
+                                        <div class="timeline-body">
+                                            <p>España entra en su quinta semana de confinamiento con un descenso en la cifra de fallecidos por coronavirus, 517 en 24 horas,
+                                                lo que supone 102 víctimas menos que las registradas el día anterior y eleva la cifra total a 17.489.
+                                                La transmisión de la enfermedad también sigue una tendencia a la baja desde el pasado 1 de abril -el día en el que se notificaron más positivos,
+                                                9.222- con 3.477 nuevos contagiados y una tasa de expansión que ya se aproxima al 2%, la menor desde el inicio de la crisis sanitario.
+                                                En el plano económico, poco a poco se recupera una mínima actividad laboral tras el fin del confinamiento para toda actividad no esencial. </p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="timeline-panel">
+                                        <div class="timeline-heading">
+                                            <h4 class="timeline-title"> 1 de cada 235 españoles ya ha dado positivo a la prueba del Covid-19</h4>
+                                            <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i>20 de abril de 2020</small></p>
+                                        </div>
+                                        <div class="timeline-body">
+                                            <p>La sexta semana de confinamiento comienza en España con noticias agridulces.
+                                                El número de fallecidos diarios cayó ayer hasta cifras que no se veían desde hace casi un mes.
+                                                Sin embargo, el repunte de nuevos positivos, probablemente por la irrupción masiva de test, hizo que la pandemia superara los 200.000 infectados en el país.
+                                                O lo que es lo mismo: uno de cada 235 españoles ya ha dado positivo a la prueba del Covid-19.
+                                                En los 20 días de abril transcurridos se ha doblado su número de casos positivos pese a que el ritmo de los contagios cayó ayer a su mínimo histórico (solo un 2,1%). Ya se piensa en la reconstrucción tras la pandemia.
+                                                PSOE y PP han pactado la creación de una comisión en el Congreso a través de la de llegar a un acuerdo. </p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="timeline-inverted">
+                                    <div class="timeline-badge"><i class="icon-note icons list-timeline-icon"></i></div>
+                                    <div class="timeline-panel">
+                                        <div class="timeline-heading">
+                                            <h4 class="timeline-title">Los niños salen a la calle</h4>
+                                            <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 26 de abril de 2020</small></p>
+                                        </div>
+                                        <div class="timeline-body">
+                                            <p>Los niños, siguiendo las normas pautadas por el Gobierno, salen a la calle por primera vez desde que se decretó el estado de alarma.
+                                                El Ministerio de Sanidad informa de 288 nuevas víctimas mortales en España en 24 horas.
+                                                Además, desde este domingo el Gobierno solo cuenta los casos diagnosticados por PCR, no los positivos en test de anticuerpos.  </p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="timeline-panel">
+                                        <div class="timeline-heading">
+                                            <h4 class="timeline-title">Se plasma el plan de desescalada</h4>
+                                            <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i>28 de abril de 2020</small></p>
+                                        </div>
+                                        <div class="timeline-body">
+                                            <p>Ya hay plan para la desescalada. Según ha anunciado Pedro Sánchez, se llevará a cabo en cuatro fases según las cuales
+                                                el desconfinamiento se irá relajando el confinamiento. No serán iguales para todo el territorio,
+                                                porque las fases se irán implementando a nivel provincial según se cumplan los requisitos exigidos.
+                                                Hoy ha habido 301 víctimas mortales.
+                                                La cifra continúa en descenso, pero sigue siendo dramática. </p>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    <!-- end: contenido linea temporal -->
 </body>
 </html>
