@@ -59,6 +59,7 @@ public class AppController {
 
             DataDto listForChartRegion = dataService.getListForChartRegion(dataDtoList, codeRegion);
             DataDto listForChartCountry = dataService.getListForChartCountry(dataDtoList);
+            List<DataDto> listForPieChart = dataService.getListForPieChart(dataDtoList);
 
             model.addAttribute("cases", cases);
             model.addAttribute("deaths", deaths);
@@ -71,6 +72,7 @@ public class AppController {
             model.addAttribute("regionList", regionList);
             model.addAttribute("listForChartRegion", listForChartRegion);
             model.addAttribute("listForChartCountry", listForChartCountry);
+            model.addAttribute("listForPieChart", listForPieChart);
 
             str = "dashboard";
         }

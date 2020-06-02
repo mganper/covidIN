@@ -106,6 +106,18 @@ public class DataService {
         return dataDto;
     }
 
+    public List<DataDto> getListForPieChart(List<DataDto> dataList) {
+        List<DataDto> dataDtoList = new ArrayList<>();
+
+        dataList.forEach(e -> {
+            DataDto aux = new DataDto(e.getNameRegion(), e.getCodeRegion());
+
+            aux.getCasesList().add(e.getCasesList().get(e.getCasesList().size() - 1));
+        });
+
+        return dataDtoList;
+    }
+
     private List<DataDto> generateDataDtoList(List<Data> dataList) {
         List<DataDto> dataDtoList = new ArrayList<>();
 
