@@ -37,7 +37,7 @@ public class AppController {
             List<DataDto> dataDtoList = dataService.readData();
             int casesRegion = 0, deathsRegion = 0, hospitalizedRegion = 0, dischargedRegion = 0,
                     cases = 0, deaths = 0, hospitalized = 0, discharged = 0;
-            List<DataDto> regionList = new ArrayList<>();
+            List<DataDto> regionList = dataService.getRegions(dataDtoList);
 
             DataDto dataDto = dataService.readDataByCodeRegion(codeRegion);
 
@@ -52,8 +52,6 @@ public class AppController {
                 deaths += aux.getDeathsList().get(aux.getDeathsList().size() - 1);
                 hospitalized += aux.getHospitalizedList().get(aux.getHospitalizedList().size() - 1);
                 discharged += aux.getDischargedList().get(aux.getDischargedList().size() - 1);
-
-                regionList.add(new DataDto(aux.getNameRegion(), aux.getCodeRegion()));
             }
 
 
@@ -74,7 +72,7 @@ public class AppController {
             model.addAttribute("listForChartCountry", listForChartCountry);
 
             listForPieChart.forEach(e->{
-                model.addAttribute(e.getNameRegion()+ "ForPieChart", e);
+                model.addAttribute("forPieChart" + e.getCodeRegion(), e);
             });
 
 
@@ -86,11 +84,28 @@ public class AppController {
 
     @GetMapping("/map")
     public String mapMethod(Model model) {
+        List<DataDto> dataDtoList = dataService.readData();
+        List<DataDto> regionList = dataService.getRegions(dataDtoList);
+        model.addAttribute("regionList", regionList);
+        
         return "map";
+    }
+
+    @GetMapping("/lifeTime")
+    public String lifeTimeMethod(Model model) {
+        List<DataDto> dataDtoList = dataService.readData();
+        List<DataDto> regionList = dataService.getRegions(dataDtoList);
+        model.addAttribute("regionList", regionList);
+
+        return "lineaTemporal";
     }
 
     @GetMapping("/credits")
     public String creditsMethod(Model model) {
+        List<DataDto> dataDtoList = dataService.readData();
+        List<DataDto> regionList = dataService.getRegions(dataDtoList);
+        model.addAttribute("regionList", regionList);
+
         return "credits";
     }
 }

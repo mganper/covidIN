@@ -241,6 +241,8 @@
                             <div class="col-md-12">
                                 <div class="triangle-right" style="border-left: 18px solid rgb(100,205,154);"></div><span th:text="'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Contagios en ' + ${listForChartRegion.nameRegion}"></span>
                                 <br/>
+                                <br/>
+                                <br/>
                             </div>
 
                         </div>
@@ -268,6 +270,8 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Contraste pais -->
                 <div class="col-md-8">
                     <div class="panel">
                         <div class="panel-heading bg-white border-none" style="padding:20px;">
@@ -287,6 +291,22 @@
                                 <div class="triangle-right" style="border-left: 18px solid rgba(226,188,40,0.6);"></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Contagios en Espa&ntilde;a
                             </div>
 
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Piechart contagios -->
+                <div class="col-md-6">
+                    <div class="panel">
+                        <div class="panel-heading bg-white border-none" style="padding:20px;">
+                            <div class="col-md-6 col-sm-6 col-sm-12 text-left">
+                                <h3>Contagios por comunidad</h3>
+                            </div>
+                        </div>
+                        <div class="panel-body" style="padding-bottom:50px;">
+                            <div style="padding-top:20px;">
+                                <canvas class="doughnut-chart2"></canvas>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -366,8 +386,7 @@
                 pointHighlightFill: "rgb(100,205,154)",
                 pointHighlightStroke: "rgb(36,114,7)",
                 data: [[${listForChartRegion.casesList}]]
-            }
-            ]
+            }]
         };
 
         var casosComunidadChart = {
@@ -411,34 +430,106 @@
 
         var doughnutData2 = [
             {
-                value: 100,
-                color: "#129352",
-                highlight: "#15BA67",
-                label: "Alfa"
+                value: [[${forPieChart1.casesList[0]}]],
+                color: "rgba(17,85,22,0.70)",
+                highlight: "rgba(0,95,9,0.4)",
+                label: [[${forPieChart1.nameRegion}]]
             },
             {
-                value: 250,
-                color: "#FF6656",
-                highlight: "#FF6656",
-                label: "Beta"
+                value: [[${forPieChart2.casesList[0]}]],
+                color: "rgba(198,77,77,0.70)",
+                highlight: "rgba(198,77,77,0.4)",
+                label: [[${forPieChart2.nameRegion}]]
             },
             {
-                value: 100,
-                color: "#FDB45C",
-                highlight: "#15BA67",
-                label: "Gamma"
+                value: [[${forPieChart3.casesList[0]}]],
+                color: "rgba(205,23,74,0.70)",
+                highlight: "rgba(205,23,74,0.4)",
+                label: [[${forPieChart3.nameRegion}]]
             },
             {
-                value: 40,
-                color: "#FD786A",
-                highlight: "#15BA67",
-                label: "Peta"
+                value: [[${forPieChart4.casesList[0]}]],
+                color: "rgba(132,51,220,0.70)",
+                highlight: "rgba(132,51,220,0.4)",
+                label: [[${forPieChart4.nameRegion}]]
             },
             {
-                value: 120,
-                color: "#15A65D",
-                highlight: "#15BA67",
-                label: "X"
+                value: [[${forPieChart5.casesList[0]}]],
+                color: "rgba(238,101,183,0.70)",
+                highlight: "rgba(238,101,183,0.4)",
+                label: [[${forPieChart5.nameRegion}]]
+            },
+            {
+                value: [[${forPieChart6.casesList[0]}]],
+                color: "rgba(86,0,248,0.70)",
+                highlight: "rgba(86,0,248,0.4)",
+                label: [[${forPieChart6.nameRegion}]]
+            },
+            {
+                value: [[${forPieChart7.casesList[0]}]],
+                color: "rgba(125,107,213,0.70)",
+                highlight: "rgba(125,107,213,0.4)",
+                label: [[${forPieChart7.nameRegion}]]
+            },
+            {
+                value: [[${forPieChart8.casesList[0]}]],
+                color: "rgba(0,163,255,0.70)",
+                highlight: "rgba(0,163,255,0.4)",
+                label: [[${forPieChart8.nameRegion}]]
+            },
+            {
+                value: [[${forPieChart9.casesList[0]}]],
+                color: "rgba(119,170,32,0.70)",
+                highlight: "rgba(119,170,32,0.4)",
+                label: [[${forPieChart9.nameRegion}]]
+            },
+            {
+                value: [[${forPieChart10.casesList[0]}]],
+                color: "rgba(136,193,120,0.70)",
+                highlight: "rgba(136,193,120,0.4)",
+                label: [[${forPieChart10.nameRegion}]]
+            },
+            {
+                value: [[${forPieChart12.casesList[0]}]],
+                color: "rgba(30,153,145,0.70)",
+                highlight: "rgba(30,153,145,0.4)",
+                label: [[${forPieChart12.nameRegion}]]
+            },
+            {
+                value: [[${forPieChart13.casesList[0]}]],
+                color: "rgba(0,73,109,0.70)",
+                highlight: "rgba(0,73,109,0.4)",
+                label: [[${forPieChart13.nameRegion}]]
+            },
+            {
+                value: [[${forPieChart14.casesList[0]}]],
+                color: "rgba(134,69,234,0.70)",
+                highlight: "rgba(134,69,234,0.4)",
+                label: [[${forPieChart14.nameRegion}]]
+            },
+            {
+                value: [[${forPieChart15.casesList[0]}]],
+                color: "rgba(210,144,241,0.70)",
+                highlight: "rgba(210,144,241,0.4)",
+                label: [[${forPieChart15.nameRegion}]]
+            },
+            {
+                value: [[${forPieChart17.casesList[0]}]],
+                color: "rgba(215,75,75,0.70)",
+                highlight: "rgba(215,75,75,0.4)",
+                label: [[${forPieChart17.nameRegion}]]
+            },
+            {
+                value: [[${forPieChart18.casesList[0]}]],
+                color: "rgba(106,126,191,0.70)",
+                highlight: "rgba(106,126,191,0.4)",
+                label: [[${forPieChart18.nameRegion}]]
+            },
+            {
+                value: [[${forPieChart19.casesList[0]}]],
+                color: "rgba(217,212,49,0.70)",
+                highlight: "rgba(217,212,49,0.4)",
+                label: [[${forPieChart19.nameRegion}]]
             }
         ];
 
