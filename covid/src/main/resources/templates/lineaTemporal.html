@@ -60,8 +60,9 @@
 <script th:src="@{/asset/js/main.js}"></script>
 
     <!-- start: Content -->
+<div class="container-fluid mimin-wrapper">
     <div id="content">
-        <div class="panel box-shadow-none content-header" style="background-color: white; text-align: center;">
+        <div class="panel box-shadow-none content-header" style="background-color: white;">
             <div class="panel-body">
                 <div class="col-md-12">
                     <h3 class="animated fadeInLeft">Hechos importantes SARS-Cov-2</h3>
@@ -79,7 +80,7 @@
                         <div class="col-md-12">
                             <ul class="timeline" >
                                 <li>
-                                    <div class="timeline-badge"><i class="icon-plane icons list-timeline-icon"></i></div>
+                                    <div class="timeline-badge fas fa-globe-asia"></div>
                                     <div class="timeline-panel">
                                         <div class="timeline-heading">
                                             <h4 class="timeline-title">Primeros casos en el Mundo</h4>
@@ -93,7 +94,7 @@
                                     </div>
                                 </li>
                                 <li class="timeline-inverted">
-                                    <div class="timeline-badge warning"></div>
+                                    <div class="timeline-badge warning fas fa-head-side-virus "></div>
                                     <div class="timeline-panel">
                                         <div class="timeline-heading">
                                             <h4 class="timeline-title">Primeros casos en España</h4>
@@ -110,7 +111,7 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="timeline-badge danger"></div>
+                                    <div class="timeline-badge danger fas fa-ban"></div>
                                     <div class="timeline-panel">
                                         <div class="timeline-heading">
                                             <h4 class="timeline-title"> Cancelación del Mobile World Congress</h4>
@@ -136,7 +137,7 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="timeline-badge info"></div>
+                                    <div class="timeline-badge info far fa-dizzy"></div>
                                     <div class="timeline-panel">
                                         <div class="timeline-heading">
                                             <h4 class="timeline-title">Primera muerte registrada en España</h4>
@@ -163,7 +164,7 @@
                                     </div>
                                 </li>
                                 <li class="timeline-inverted">
-                                    <div class="timeline-badge danger"></div>
+                                    <div class="timeline-badge danger fas fa-graduation-cap"></div>
                                     <div class="timeline-panel">
                                         <div class="timeline-heading">
                                             <h4 class="timeline-title">Cierre de centros</h4>
@@ -174,7 +175,7 @@
                                                 Se suman así a la decisión adoptada con anterioridad por la Comunidad de Madrid y La Rioja.
                                                 Además se confinan Igualada y otros tres municipios de Barcelona.</p>
 
-                                               <p> El IBEX 35 sufre la mayor caída de su historia en línea con el resto de bolsas mundiales.
+                                            <p> El IBEX 35 sufre la mayor caída de su historia en línea con el resto de bolsas mundiales.
                                                 El Gobierno anuncia que destinará 3.800 millones a la Sanidad e inyectará 14.000 a la economía ante el impacto del coronavirus.
                                                 La Liga de fútbol se suspende dos jornadas y la NBA cancela lo que resta de temporada.
                                                 China da por superado el pico de transmisiones de coronavirus en el país.</p>
@@ -200,34 +201,42 @@
                                     </div>
                                 </li>
                                 <li class="timeline-inverted">
-                                    <div class="timeline-badge warning"></div>
+                                    <div class="timeline-badge warning fas fa-chart-line"></div>
                                     <div class="timeline-panel">
                                         <div class="timeline-heading">
                                             <h4 class="timeline-title">Aumento de casos</h4>
-                                            <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 19 de marzo de 2020</small></p>
+                                            <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 19 de
+                                                marzo de 2020</small></p>
                                         </div>
                                         <div class="timeline-body">
-                                            <p>Los casos aumentan hasta los 17.147 contagiados en España, 767 muertos y 1.107 curados.
-                                                Una enfermera que trabajaba en un hospital del País Vasco se convierte en la primera sanitaria española víctima mortal por el coronavirus
+                                            <p>Los casos aumentan hasta los 17.147 contagiados en España, 767 muertos y
+                                                1.107 curados.
+                                                Una enfermera que trabajaba en un hospital del País Vasco se convierte
+                                                en la primera sanitaria española víctima mortal por el coronavirus
                                                 y en Madrid dos hoteles se convierten en hospitales de campaña.
-                                                Por otro lado, Italia, con 3.400 decesos, supera en número de muertos a China.</p>
+                                                Por otro lado, Italia, con 3.400 decesos, supera en número de muertos a
+                                                China.</p>
                                         </div>
                                     </div>
                                 </li>
-                                <li class="timeline-inverted">
-                                    <div class="timeline-badge "><i class="icon-notebook icons list-timeline-icon"></i></div>
-                                    <div class="timeline-panel">
+                                <li class="timeline-panel">
+                                    <div class="timeline-panel ">
                                         <div class="timeline-heading">
-                                            <h4 class="timeline-title">Aumento de casos</h4>
-                                            <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 24 de marzo de 2020</small></p>
+                                            <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 24 de
+                                                marzo de 2020</small></p>
                                         </div>
                                         <div class="timeline-body">
-                                            <p>Los fallecidos aumentan en 500 en un día, hasta 2.696, y los contagiados rozan los 40.000.
+                                            <p>Los fallecidos aumentan en 500 en un día, hasta 2.696, y los contagiados
+                                                rozan los 40.000.
                                                 Hay otros 3.794 pacientes recuperados.
-                                                El 13% de los profesionales sanitarios españoles está infectado por coronavirus (frente al 8% en Italia y el 4% en China) y
-                                                el Gobierno admite que la falta de material dispara los contagios entre los sanitarios.
-                                                En este sentido, el Ejecutivo anuncia que está comprando mascarillas, test y respiradores en China.
-                                                Además, Inditex, Telefónica, Iberdrola, BBVA y Santander, las grandes expresas del Ibex, movilizan 150 millones para donar material
+                                                El 13% de los profesionales sanitarios españoles está infectado por
+                                                coronavirus (frente al 8% en Italia y el 4% en China) y
+                                                el Gobierno admite que la falta de material dispara los contagios entre
+                                                los sanitarios.
+                                                En este sentido, el Ejecutivo anuncia que está comprando mascarillas,
+                                                test y respiradores en China.
+                                                Además, Inditex, Telefónica, Iberdrola, BBVA y Santander, las grandes
+                                                expresas del Ibex, movilizan 150 millones para donar material
                                                 sanitario.
                                                 Además, se han puesto 20.000 denuncias a ciudadanos que no han respetado el estado de alarma.</p>
                                         </div>
@@ -235,7 +244,7 @@
                                 </li>
 
                                 <li class="timeline-inverted">
-                                    <div class="timeline-badge danger"><i class="icon-notebook icons list-timeline-icon"></i></div>
+                                    <div class="timeline-badge danger fas fa-book-dead"></div>
                                     <div class="timeline-panel">
                                         <div class="timeline-heading">
                                             <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 2 de abril de 2020</small></p>
@@ -261,7 +270,7 @@
                                     </div>
                                 </li>
                                 <li class="timeline-inverted">
-                                    <div class="timeline-badge warning"><i class="icon-notebook icons list-timeline-icon"></i></div>
+                                    <div class="timeline-badge warning fas fa-house-user"></div>
                                     <div class="timeline-panel">
                                         <div class="timeline-heading">
                                             <h4 class="timeline-title">Quinta semana de confinamiento</h4>
@@ -293,7 +302,7 @@
                                     </div>
                                 </li>
                                 <li class="timeline-inverted">
-                                    <div class="timeline-badge"><i class="icon-note icons list-timeline-icon"></i></div>
+                                    <div class="timeline-badge fas fa-child"></div>
                                     <div class="timeline-panel">
                                         <div class="timeline-heading">
                                             <h4 class="timeline-title">Los niños salen a la calle</h4>
@@ -326,6 +335,9 @@
                     </div>
                 </div>
             </div>
-    <!-- end: contenido linea temporal -->
+        </div>
+    </div>
+</div>
+            <!-- end: contenido linea temporal -->
 </body>
 </html>
