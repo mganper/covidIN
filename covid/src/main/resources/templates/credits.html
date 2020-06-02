@@ -41,7 +41,38 @@
     <div th:replace="fragments/sidebarFragment :: sidebar"></div>
     <!-- start: content -->
 
-    <div id="content"></div>
+    <div id="content">
+        <div class="panel box-shadow-none content-header">
+            <div class="panel-body">
+                <div class="col-md-12">
+                    <h3 class="animated fadeInLeft">Cr&eacute;ditos</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="panel">
+                <div class="panel-body">
+                    <div class="col-md-12 text-left article-v1-title"><h2>Desarrollo:</h2></div>
+                    <div class="col-md-12  article-v1-body">
+                        <ul style="font-size:1.7em;listy">
+                            <li>Programadores:</li>
+                            <li>1. <a th:href="@{https://github.com/cad2298}" th:target="blank">Auni&oacute;n Dom&iacute;nguez, Carlos</a></li>
+                            <li>2. <a th:href="@{https://github.com/mganper}" th:target="blank">Gandul P&eacute;rez, Manuel</a></li>
+                            <li>3. <a th:href="@{https://github.com/sluzrod98}" th:target="blank">Luzuriaga Rodr&iacute;guez, Sergio</a></li>
+                            <li>4. <a th:href="@{https://github.com/paulamg24}" th:target="blank">Melgar Guerra, Paula</a></li>
+
+                            <li>&nbsp</li>
+
+                            <li>Profesores:</li>
+                            <li>1. <a th:href="@{https://www.linkedin.com/in/miguel-garcia-torres-57920567/?originalSubdomain=es}" th:target="blank">Garc&iacute;a Torres, Miguel</a></li>
+                            <li>2. <a th:href="@{https://github.com/davgutavi}" th:target="blank">Gutierrez Avil&eacute;s, David</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </div>
 
 </body>
