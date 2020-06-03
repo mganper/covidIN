@@ -239,10 +239,16 @@
                             </div>
                             <!-- Leyenda -->
                             <div class="col-md-12">
-                                <div class="triangle-right" style="border-left: 18px solid rgb(100,205,154);"></div><span th:text="'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Contagios en ' + ${listForChartRegion.nameRegion}"></span>
+                                <div class="triangle-right" style="border-left: 18px solid rgb(100,205,154);"></div><span th:text="'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Altas en ' + ${listForChartRegion.nameRegion}"></span>
                                 <br/>
                                 <br/>
+                                <div class="triangle-right" style="border-left: 18px solid rgb(179,55,245);"></div><span th:text="'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Contagios en ' + ${listForChartRegion.nameRegion}"></span>
                                 <br/>
+                                <br/>
+                                <div class="triangle-right" style="border-left: 18px solid rgba(47,235,255,0.4);"></div><span th:text="'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hospitalizados en ' + ${listForChartRegion.nameRegion}"></span>
+                                <br/>
+                                <br/>
+                                <div class="triangle-right" style="border-left: 18px solid rgb(0,0,0);"></div><span th:text="'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Muertes en ' + ${listForChartRegion.nameRegion}"></span>
                             </div>
 
                         </div>
@@ -266,6 +272,11 @@
                                 <br/>
                                 <br/>
                                 <div class="triangle-right" style="border-left: 18px solid rgba(11,37,212,0.4);"></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Precipitaciones
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
                             </div>
                         </div>
                     </div>
@@ -429,7 +440,7 @@
                     data: [[${listForChartRegion.hospitalizedList}]]
                 },
                 {
-                    label: "Casos por comunidad",
+                    label: "Altas por comunidad",
                     fillColor: "rgba(8,229,30,0.4)",
                     strokeColor: "rgba(220,220,220,1)",
                     pointColor: "rgba(8,229,30,0.4)",
@@ -439,7 +450,7 @@
                     data: [[${listForChartRegion.dischargedList}]]
                 },
                 {
-                    label: "Casos por comunidad",
+                    label: "Muertes por comunidad",
                     fillColor: "rgba(0,0,0,0.4)",
                     strokeColor: "rgba(220,220,220,1)",
                     pointColor: "rgba(66,69,67,0.3)",
@@ -704,6 +715,15 @@
         };
         //  end:  Chart =============
     })(jQuery);
+
+    function imprimir() {
+        if($('.is-open').length > 0){
+            $('.is-open').click();
+        }
+        $(":animated").promise().done(function() {
+            window.print();
+        });
+    }
 </script>
 <!-- end: Javascript -->
 </body>

@@ -1263,7 +1263,7 @@ ul li a:focus {
   .label-outline.label-default,
   .alert-outline.alert-default {
     border: 1px solid #ddd !important;
-    background: none !important;
+    background-color: #d93d3d !important;
     color: #857E7E !important;
   }
 
@@ -1322,9 +1322,9 @@ ul li a:focus {
   .btn-outline.btn-default:focus,
   .label-outline.label-default:hover,
   .alert-outline.alert-default:hover {
-    background: none !important;
-    color: #918C8C !important;
-    border: 1px solid #918C8C !important;
+    background-color: rgb(144, 60, 60) !important;
+    color: #ffffff !important;
+    border: 1px solid #ffffff !important;
   }
 
   .btn-gradient {

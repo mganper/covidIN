@@ -38,7 +38,12 @@
                 </div>
             </div>
         </div>
+
         <b class="navbar-brand">COVID-19 En Espa&ntilde;a</b>
+
+        <button th:unless="${cases == null}" class="navbar-brand btn btn-circle btn-outline btn-sm btn-default" onclick="imprimir();" style="margin-top: 0.1%; margin-left: 20%; color: red; border: 1px solid red" value="primary">
+            <span class="far fa-file-pdf"></span>
+        </button>
     </nav>
 </body>
 </html>
